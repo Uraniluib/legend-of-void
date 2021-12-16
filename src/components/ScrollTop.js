@@ -25,7 +25,7 @@ export function ScrollTop(props) {
     });
 
     const handleClick = event => {
-        const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
+        const anchor = (event.target.ownerDocument || document).querySelector('header');
 
         if (anchor) {
             anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -43,9 +43,5 @@ export function ScrollTop(props) {
 
 ScrollTop.propTypes = {
     children: PropTypes.element.isRequired,
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
 };
