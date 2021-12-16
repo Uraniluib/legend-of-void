@@ -71,7 +71,7 @@ const Header = (props) => {
                                 }}
                             >
                                 {links.map((link, count) => (
-                                    <MenuItem key={count} component={Link} to={'/legend-of-void' + link}>
+                                    <MenuItem key={count} component={Link} to={'./' + link}>
                                         <Typography textAlign="center">{pages[link]}</Typography>
                                     </MenuItem>
                                 ))}
