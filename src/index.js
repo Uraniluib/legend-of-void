@@ -26,21 +26,21 @@ ReactDOM.render(
       <App>
         <Routes>
           {/* 编年史 */}
-          <Route path="/chronicle" element={<Chronicle />} />
+          <Route path="/legend-of-void/chronicle" element={<Chronicle />} />
           {/* 人物介绍 */}
-          <Route path="/people" element={<People />} />
+          <Route path="/legend-of-void/people" element={<People />} />
           {/* 民族演变 */}
-          <Route path="/ethnicity" element={<Ethnicity />} />
+          <Route path="/legend-of-void/ethnicity" element={<Ethnicity />} />
           {/* 专有名词 */}
-          <Route path="/propernoun" element={<ProperNoun />} />
+          <Route path="/legend-of-void/propernoun" element={<ProperNoun />} />
           {/* 天文地理 */}
-          <Route path="/astrogeophy" element={<Astrogeophy />} />
+          <Route path="/legend-of-void/astrogeophy" element={<Astrogeophy />} />
           {/* 小说正文 */}
-          <Route path="/story" element={<Story />} />
+          <Route path="/legend-of-void/story" element={<Story />} />
           {/* 词条页面 */}
-          <Route path="/entry" element={<Entry />} />
+          <Route path="/legend-of-void/entry" element={<Entry />} />
           {/* 主页 */}
-          <Route path="/*" element={<Homepage />} />
+          <Route path="/legend-of-void" element={<Homepage />} />
         </Routes>
       </App>
     </BrowserRouter>

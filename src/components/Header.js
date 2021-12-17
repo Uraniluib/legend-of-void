@@ -71,7 +71,7 @@ const Header = (props) => {
                                 }}
                             >
                                 {links.map((link, count) => (
-                                    <MenuItem key={count} component={Link} to={link}>
+                                    <MenuItem key={count} component={Link} to={'/legend-of-void' + link}>
                                         <Typography textAlign="center">{pages[link]}</Typography>
                                     </MenuItem>
                                 ))}
@@ -88,7 +88,7 @@ const Header = (props) => {
                             {links.map((link, count) => (
                                 <Button
                                     key={count}
-                                    component={Link} to={link}
+                                    component={Link} to={'/legend-of-void/' + link}
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'inherit', display: 'block' }}
 
