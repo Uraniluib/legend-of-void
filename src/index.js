@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 // import {applyMiddleware, createStore} from "redux";
 // import {Provider} from "react-redux";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter, Routes, Route} from "react-router-dom";
 // import ReduxPromise from "redux-promise";
 import './index.css';
 import App from './components/App';
@@ -22,28 +22,28 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   // <Provider store={createStoreWithMiddle(rootReducer)}>
-    <BrowserRouter>
+    <HashRouter>
       <App>
         <Routes>
           {/* 编年史 */}
-          <Route path="/legend-of-void/chronicle" element={<Chronicle />} />
+          <Route path="/chronicle" element={<Chronicle />} />
           {/* 人物介绍 */}
-          <Route path="/legend-of-void/people" element={<People />} />
+          <Route path="/people" element={<People />} />
           {/* 民族演变 */}
-          <Route path="/legend-of-void/ethnicity" element={<Ethnicity />} />
+          <Route path="/ethnicity" element={<Ethnicity />} />
           {/* 专有名词 */}
-          <Route path="/legend-of-void/propernoun" element={<ProperNoun />} />
+          <Route path="/propernoun" element={<ProperNoun />} />
           {/* 天文地理 */}
-          <Route path="/legend-of-void/astrogeophy" element={<Astrogeophy />} />
+          <Route path="/astrogeophy" element={<Astrogeophy />} />
           {/* 小说正文 */}
-          <Route path="/legend-of-void/story" element={<Story />} />
+          <Route path="/story" element={<Story />} />
           {/* 词条页面 */}
-          <Route path="/legend-of-void/entry" element={<Entry />} />
+          <Route path="/entry" element={<Entry />} />
           {/* 主页 */}
-          <Route path="/legend-of-void" element={<Homepage />} />
+          <Route path="/*" element={<Homepage />} />
         </Routes>
       </App>
-    </BrowserRouter>
+    </HashRouter>
   // </Provider>
   ,
   document.getElementById('root')
