@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { ScrollTop } from "../components/ScrollTop"
+import ScrollTop from "../components/ScrollTop"
 import { Copyright } from "../components/Copyright";
 import Box from "@material-ui/core/Box";
 import Fab from "@material-ui/core/Fab";
@@ -22,7 +22,7 @@ const App = (props) => {
   return (
     <div
       style={{
-        backgroundColor: theme.palette.primary[theme.palette.mode],
+        backgroundColor: theme.palette.primary.light,
         color: theme.palette.primary.contrastText,
       }}
     >
@@ -51,7 +51,7 @@ const App = (props) => {
         </Box>
       </footer>
       <ScrollTop {...props}>
-        <Fab color="primary" size="small" aria-label="scroll back to top">
+        <Fab color="default" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
