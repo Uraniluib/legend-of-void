@@ -46,6 +46,7 @@ export default function Chronicle() {
                     filtering: true,
                     paging: false,
                     headerStyle: { color: 'inherit', backgroundColor: 'inherit' },
+                    rowStyle: { fontSize: '0.875rem' },
                     filterCellStyle: { backgroundColor: theme.palette.primary.light },
                     searchFieldStyle: { color: 'inherit', backgroundColor: 'inherit' },
                     tableLayout: 'auto'
