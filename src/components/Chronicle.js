@@ -8,16 +8,24 @@ import { useTheme } from '@mui/material/styles';
 import { chronicleData, ageData } from './../datasets/ChronicleData.js';
 
 const columns = [
-    { field: 'age', title: '纪元', width: '7%', lookup: ageData },
     {
-        field: 'time', title: '代', width: '10%', type: 'numeric',
-        customFilterAndSearch: (term, rowData) => parseInt(term) <= parseInt(rowData.time)
+        field: 'age', title: '纪元', lookup: ageData,
+        cellStyle: { width: '7%' }
     },
     {
-        field: 'date', title: '回', width: '10%', type: 'numeric',
-        customFilterAndSearch: (term, rowData) => parseInt(term) <= parseInt(rowData.date)
+        field: 'time', title: '代', type: 'numeric',
+        customFilterAndSearch: (term, rowData) => parseInt(term) <= parseInt(rowData.time),
+        cellStyle: { width: '8%' }
     },
-    { field: 'event', title: '大事件', width: '81%' }
+    {
+        field: 'date', title: '回', type: 'numeric',
+        customFilterAndSearch: (term, rowData) => parseInt(term) <= parseInt(rowData.date),
+        cellStyle: { width: '8%' }
+    },
+    {
+        field: 'event', title: '大事件',
+        cellStyle: { width: '77%' }
+    }
 ];
 
 export default function Chronicle() {
@@ -37,10 +45,10 @@ export default function Chronicle() {
                 options={{
                     filtering: true,
                     paging: false,
-                    tableLayout: "fixed",
                     headerStyle: { color: 'inherit', backgroundColor: 'inherit' },
                     filterCellStyle: { backgroundColor: theme.palette.primary.light },
-                    searchFieldStyle: { color: 'inherit', backgroundColor: 'inherit' }
+                    searchFieldStyle: { color: 'inherit', backgroundColor: 'inherit' },
+                    tableLayout: 'auto'
                 }}
                 localization={{
                     toolbar: {
