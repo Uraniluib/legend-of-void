@@ -31,7 +31,7 @@ const columns = [
 export default function Chronicle() {
     const theme = useTheme();
     return (
-        <Paper sx={{ margin: '1em 1em 0 1em' }}>
+        <Paper sx={{ marginTop: '1em'}}>
             <MaterialTable
                 style={{ color: 'inherit', backgroundColor: 'inherit' }}
                 title="初始世界编年史"
