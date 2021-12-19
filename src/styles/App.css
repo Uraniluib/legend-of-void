@@ -38,10 +38,15 @@
   }
 }
 
-MuiDataGrid-viewport, .MuiDataGrid-row, .MuiDataGrid-renderingZone {
+/* .MuiDataGrid-root {
+  overflow: hidden !important;
+}
+.MuiDataGrid-row, .MuiDataGrid-renderingZone {
   max-height: fit-content !important;
+  overflow: hidden !important;
 }
 .MuiDataGrid-cell {
+  overflow: hidden !important;
   max-height: fit-content !important;
   white-space: initial !important;
   line-height: 16px !important;
@@ -49,4 +54,4 @@ MuiDataGrid-viewport, .MuiDataGrid-row, .MuiDataGrid-renderingZone {
   align-items: center;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-}
+} */

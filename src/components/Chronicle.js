@@ -5,10 +5,13 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import {
     DataGrid,
     GridToolbarDensitySelector,
     GridToolbarFilterButton,
+    GridRenderCellParams,
 } from '@mui/x-data-grid';
 import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
@@ -16,16 +19,16 @@ import SearchIcon from '@mui/icons-material/Search';
 const columns = [
     { field: 'age', headerName: '纪元', flex: 1, width: 20, sortable: false },
     { field: 'time', headerName: '时期', flex: 1, width: 100, sortable: false },
-    { field: 'event', headerName: '大事件', flex: 35, width: 300, sortable: false },
-    // {
-    //     field: 'event', headerName: '大事件', flex: 35, width: 500, sortable: false,
-    //     renderCell: (params) => (
-    //         <div>
-    //             <Typography style={{ wordWrap: "break-word" }}>{params.row.event}</Typography>
-    //         </div>
-    //     )
-    // },
-    // { field: 'note', headerName: '备注', width: 20, sortable: false  },
+    // { field: 'event', headerName: '大事件', flex: 35, width: 300, sortable: false },
+    {
+        field: 'event', headerName: '大事件', flex: 35, width: 300, sortable: false,
+        renderCell: (params) => (
+            <div>
+                <div style={{width: '44%'}}>{params.row.event}</div>
+            </div>
+        )
+    },
+    // { field: 'note', headerName: '', width: 10, sortable: false },
 ];
 
 function escapeRegExp(value) {
@@ -118,12 +121,12 @@ export default function QuickFilteringGrid(props) {
     // }, [chronicleData]);
 
     return (
-        <Paper sx={{ width: 'auto', margin: '1em 1em 0 1em' }}>
+        <Paper sx={{ width: 'auto', margin: '1em 1em 0 1em'}}>
             <DataGrid
                 disableColumnSelector
                 components={{ Toolbar: QuickSearchToolbar }}
                 density='compact'
-                autoHeight={true}
+                autoHeight
                 rowsPerPageOptions={[25, 50, 100, 250, 500, 1000]}
                 rows={rows}
                 columns={columns}
