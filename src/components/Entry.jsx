@@ -20,9 +20,9 @@ export default function Entry() {
                 <Card sx={{ maxWidth: 345 }}>
                     <CardMedia
                         component="img"
-                        height="140"
-                        image={}
-                        alt="华水"
+                        height="240"
+                        image={"https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/" + params.id + ".jpg"}
+                        alt={params.id}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
