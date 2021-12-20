@@ -37,3 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
+.MuiTableCell-sizeSmall p {
+  margin: 0 0 0 0;
+}

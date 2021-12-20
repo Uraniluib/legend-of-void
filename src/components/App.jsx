@@ -9,6 +9,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import ScrollTop from "../components/ScrollTop"
 import { Copyright } from "../components/Copyright";
 import Box from "@material-ui/core/Box";
+import Paper from "@material-ui/core/Paper";
 import Fab from "@material-ui/core/Fab";
 import Container from "@material-ui/core/Container";
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
@@ -34,7 +35,8 @@ const App = (props) => {
         </Header>
       </header>
       <main>
-        <Container className={classes.appContainer}
+        <Container
+          className={classes.appContainer}
           maxWidth="xl"
         >
           {props.children}
@@ -43,7 +45,6 @@ const App = (props) => {
       <footer>
         <Box
           style={{
-            marginTop: '1em',
             paddingBottom: '1em',
           }}
         >

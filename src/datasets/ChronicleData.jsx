@@ -3,7 +3,7 @@ export const ageData = {
 }
 
 export const chronicleData = [
-    { age: '青潭纪', time: '/', date: '/', event: '华水（WawSea）（Greenan）、紫媚（ChiNo）（Adon）出生', },
+    { age: '青潭纪', time: '/', date: '/', event: '[华水](/legend-of-void#/entry/华水)（WawSea）（Greenan）、紫媚（ChiNo）（Adon）出生', },
     { age: '正弦纪', time: '朝闻时期', date: '/', event: '西夏（XVXa）（Vtin）、锌雨（ZinLee）（Leenar）出生', },
     { age: '正弦纪', time: '陆运时期', date: '/', event: '华水紫媚二人改进并普及简易反转式，涟庄（LanShawn）、漪稼（YveXJa）二族参与神匣的术师竞标', },
     { age: '正弦纪', time: '汛岚时期', date: '/', event: '华水紫媚西夏联手抗灾。锌雨刻意夸大宣传，编撰《古经》，将事迹神化', },
