@@ -41,3 +41,12 @@
 .MuiTableCell-sizeSmall p {
   margin: 0 0 0 0;
 }
+
+p a {
+  color: #78909c;
+  text-decoration: none;
+}
+p a:hover {
+  color: #546e7a;
+  text-decoration: none;
+}

@@ -6,7 +6,8 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useTheme } from '@mui/material/styles';
-import { chronicleData, ageData } from '../datasets/ChronicleData.jsx';
+import { chronicleData, ageData } from './../datasets/ChronicleData.jsx';
+import { parseMarkdown } from './../rules/utils.jsx';
 
 export default function Chronicle() {
     const theme = useTheme();
@@ -31,7 +32,7 @@ export default function Chronicle() {
         {
             field: 'event', title: '大事件',
             cellStyle: { width: '77%' },
-            render: (rowData) => <ReactMarkdown children={rowData.event}></ReactMarkdown>
+            render: (rowData) => <ReactMarkdown children={parseMarkdown(rowData.event)}></ReactMarkdown>
         }
     ];
 

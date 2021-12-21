@@ -5,16 +5,16 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      light: '#c7cceb',
-      main: '#959dcf',
-      dark: '#6d75a3',
-      contrastText: '#000212',
+      light: '#eceff1',
+      main: '#b0bec5',
+      dark: '#78909c',
+      contrastText: '#263238',
     },
     secondary: {
-      light: '#d8f2bb',
-      main: '#abd180',
-      dark: '#71914d',
-      contrastText: '#091200',
+      light: '#607d8b',
+      main: '#455a64',
+      dark: '#263238',
+      contrastText: '#eceff1',
     }
   },
 });
@@ -23,16 +23,16 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      light: '#4f5b62',
-      main: '#4e6773',
-      dark: '#000a12',
-      contrastText: '#d8e1e6',
+      light: '#607d8b',
+      main: '#455a64',
+      dark: '#263238',
+      contrastText: '#eceff1',
     },
     secondary: {
-      light: '#6a4f4b',
-      main: '#3e2723',
-      dark: '#1b0000',
-      contrastText: '#f5eceb',
+      light: '#eceff1',
+      main: '#b0bec5',
+      dark: '#78909c',
+      contrastText: '#263238',
     }
   },
 });
@@ -46,4 +46,10 @@ export const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(2),
     right: theme.spacing(2)
   },
+  // p: {
+  //   a: {
+  //     color: theme.palette.secondary.main,
+  //     textDecoration: 'none'
+  //   }
+  // }
 }));

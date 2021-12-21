@@ -3,9 +3,9 @@ export const ageData = {
 }
 
 export const chronicleData = [
-    { age: '青潭纪', time: '/', date: '/', event: '[华水](/legend-of-void#/entry/华水)（WawSea）（Greenan）、紫媚（ChiNo）（Adon）出生', },
-    { age: '正弦纪', time: '朝闻时期', date: '/', event: '西夏（XVXa）（Vtin）、锌雨（ZinLee）（Leenar）出生', },
-    { age: '正弦纪', time: '陆运时期', date: '/', event: '华水紫媚二人改进并普及简易反转式，涟庄（LanShawn）、漪稼（YveXJa）二族参与神匣的术师竞标', },
+    { age: '青潭纪', time: '/', date: '/', event: '[[华水]]（WawSea）（Greenan）、[[紫媚]]（ChiNo）（Adon）出生', },
+    { age: '正弦纪', time: '朝闻时期', date: '/', event: '[[西夏]]（XVXa）（Vtin）、[[锌雨]]（ZinLee）（Leenar）出生', },
+    { age: '正弦纪', time: '陆运时期', date: '/', event: '华水紫媚二人改进并普及简易反转式，[[涟庄]]（LanShawn）、[[漪稼]]（YveXJa）二族参与神匣的术师竞标', },
     { age: '正弦纪', time: '汛岚时期', date: '/', event: '华水紫媚西夏联手抗灾。锌雨刻意夸大宣传，编撰《古经》，将事迹神化', },
     { age: '正弦纪', time: '洪辰时期', date: '/', event: '锌雨谋杀紫媚和西夏，并将华水制成缚灵忆。锌雨一世诞生（华水一直处于混沌状态，所以后几任锌雨接手的时候都不知道要做什么，直到第一任锌雨转世，拾回记忆，才继续他永生的计划，然而世界已大变模样，事情失去了控制）。', },
     { age: '迁佑纪', time: '茗露时期', date: '/', event: '《闻露识材》出版', },
