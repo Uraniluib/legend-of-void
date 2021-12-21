@@ -40,7 +40,7 @@ export default function Chronicle() {
         <Paper sx={{ marginTop: '1em' }}>
             <MaterialTable
                 style={{ color: 'inherit', backgroundColor: 'inherit' }}
-                title="初始世界编年史"
+                title="初始编年史"
                 columns={columns}
                 data={chronicleData}
                 icons={{

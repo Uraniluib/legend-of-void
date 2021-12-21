@@ -9,12 +9,6 @@ export const lightTheme = createTheme({
       main: '#b0bec5',
       dark: '#78909c',
       contrastText: '#263238',
-    },
-    secondary: {
-      light: '#607d8b',
-      main: '#455a64',
-      dark: '#263238',
-      contrastText: '#eceff1',
     }
   },
 });
@@ -27,29 +21,14 @@ export const darkTheme = createTheme({
       main: '#455a64',
       dark: '#263238',
       contrastText: '#eceff1',
-    },
-    secondary: {
-      light: '#eceff1',
-      main: '#b0bec5',
-      dark: '#78909c',
-      contrastText: '#263238',
     }
   },
 });
 
 export const useStyles = makeStyles((theme) => ({
-  appContainer: {
-    padding: '0 0 2em 0'
-  },
   scrollTopStyle: {
     position: 'fixed',
     bottom: theme.spacing(2),
     right: theme.spacing(2)
-  },
-  // p: {
-  //   a: {
-  //     color: theme.palette.secondary.main,
-  //     textDecoration: 'none'
-  //   }
-  // }
+  }
 }));
