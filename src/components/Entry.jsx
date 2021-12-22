@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
@@ -16,16 +16,28 @@ export default function Entry() {
     let params = useParams();
     const [article, setArticle] = useState();
 
-    fetch("https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/articles/" + params.id + ".md")
-    .then((res)=>{res.text().then(data=>setArticle(parseMarkdown(data)))})
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/articles/' + params.id + ".md")
+            .then(res => {
+                if (res.ok) {
+                    return res.text()
+                } else if (res.status === 404) {
+                    return Promise.reject('error 404')
+                } else {
+                    return Promise.reject('some other error: ' + res.status)
+                }
+            })
+            .then(data => setArticle(parseMarkdown(data)))
+            .catch(() => setArticle(parseMarkdown(params.id + "暂无内容，请努力耕耘。")));
+    });
 
     return (
         <Grid container
             component={Paper}
-            sx={{ margin: '1em 1em 1em 1em', width: 'auto' }}
+            sx={{ margin: '1em 1em 1em 1em', padding: '0 1em 1em 0', width: 'auto' }}
             spacing={2}>
-            <Grid item xs={12} md={3}>
-                <Card sx={{ maxWidth: 345 }}>
+            <Grid item xs={12} sm={6} md={5} lg={4} xl={3}>
+                <Card sx={{ maxWidth: '400px'}}>
                     <CardMedia
                         component="img"
                         height="240"
@@ -59,12 +71,10 @@ export default function Entry() {
 
                 </Card>
             </Grid>
-            <Grid item xs={12} md={9}>
+            <Grid item xs={12} sm={6} md={7} lg={8} xl={9}>
                 <ReactMarkdown children={article} />
             </Grid>
         </Grid>
-
-
 
     );
 }
