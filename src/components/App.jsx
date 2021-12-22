@@ -10,9 +10,9 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import './../styles/App.css';
 import { lightTheme, darkTheme, useStyles } from './useStyles';
-import Header from './Header';
-import ScrollTop from "../components/ScrollTop"
-import { Copyright } from "../components/Copyright";
+import Header from './Header.jsx';
+import ScrollTop from "../components/ScrollTop.jsx"
+import { Copyright } from "../components/Copyright.jsx";
 
 function App(props) {
 

@@ -7,7 +7,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useTheme } from '@mui/material/styles';
 import { chronicleData, ageData } from './../datasets/ChronicleData.jsx';
-import { parseMarkdown } from './../rules/utils.jsx';
+import { parseMarkdown } from './../utils/utils.jsx';
 
 export default function Chronicle() {
     const theme = useTheme();
