@@ -13,10 +13,13 @@ import ReactMarkdown from 'react-markdown';
 import { parseMarkdown } from './../utils/utils.jsx';
 import useDataFetchAction from './../stores/actions/dataFetchAction.jsx';
 
+const ROOT_URL = 'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/';
+
 export default function Entry() {
     const params = useParams();
-    const { state: article } = useDataFetchAction('https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/articles/' + params.id + '.md', null);
-    const { state: figure } = useDataFetchAction('https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/' + params.id + '.jpg', null);
+    const { state: article } = useDataFetchAction(ROOT_URL + 'articles/' + params.id + '.md', null);
+    const { state: figure } = useDataFetchAction(ROOT_URL + 'images/' + params.id + '.jpg', null);
+    const { state: info } = useDataFetchAction(ROOT_URL + 'cards/' + params.id + '.json', null);
 
     return (
         <Grid container
@@ -29,7 +32,7 @@ export default function Entry() {
                     {figure.isError && <CardMedia
                         component="img"
                         height="240"
-                        image={'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/default.jpg'}
+                        image={ROOT_URL + 'images/default.jpg'}
                         alt={params.id}
                     />
                     }
@@ -37,18 +40,40 @@ export default function Entry() {
                         <CardMedia
                             component="img"
                             height="240"
-                            image={'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/' + params.id + '.jpg'}
+                            image={ROOT_URL + 'images/' + params.id + '.jpg'}
                             alt={params.id}
                         />
                     }
                     <CardContent>
+                        {info.isLoading && <Skeleton />}
+                        {info.isError && <Typography gutterBottom variant="body" component="div">{params.id}信息卡为空，请干活！</Typography>}
+                        {!info.isLoading && !info.isError && info.data &&
+                            <>
+                            {
+                                info.data.name && <Typography gutterBottom align="center" variant="h6" component="div">{info.data.name}（{info.data.foreignName}）</Typography>
+                            }
+                            {
+                                info.data.nature && <Typography gutterBottom variant="body" component="p">本源：{info.data.nature}（{info.data.foreignNature}）</Typography>
+                            }
+                            {
+                                info.data.alias && <Typography gutterBottom variant="body" component="p">别名：{info.data.alias.join('、')}</Typography>
+                            }
+                            {
+                                info.data.born && <Typography gutterBottom variant="body" component="p"><ReactMarkdown children={parseMarkdown('出生：' + info.data.born.time + '，' + info.data.born.location)} /></Typography>
+                            }
+                            </>
+                        }
+                    </CardContent>
+                    
+
+
                         <Typography gutterBottom variant="h5" component="div">
                             {params.id}
                         </Typography>
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                             隶属：上古神祗
                         </Typography>
-                        <Typography variant="body2" color="text.primary">
+                        <Typography variant="body1" color="text.primary">
                             性别：女
                         </Typography>
                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
@@ -60,7 +85,7 @@ export default function Entry() {
                         <Typography variant="body2">
                             职务：神祗、开天辟地之人、初始之初
                         </Typography>
-                    </CardContent>
+
                     <CardActions>
                         <Button size="small">分享</Button>
                         <Button size="small">查看更多</Button>

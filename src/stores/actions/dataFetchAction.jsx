@@ -11,12 +11,16 @@ const useDataFetchAction = (initialUrl, initialData) => {
     });
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_INIT' })
-        axios.get(initialUrl).then(res => {
-            dispatch({ type: 'FETCH_SUCCESS', payload: res.data })
-        }).catch(e => {
-            dispatch({ type: 'FETCH_FAILURE' })
-        })
+        const fetchData = async () => {
+            dispatch({ type: 'FETCH_INIT' });
+            try {
+                const result = await axios.get(initialUrl);
+                dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+            } catch (error) {
+                dispatch({ type: 'FETCH_FAILURE' });
+            }
+        };
+        fetchData();
     }, [initialUrl]);
     return { state };
 };
