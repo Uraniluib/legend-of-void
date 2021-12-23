@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/legend-of-void/static/css/main.16a63868.chunk.css",
-    "main.js": "/legend-of-void/static/js/main.29f6e4f8.chunk.js",
-    "main.js.map": "/legend-of-void/static/js/main.29f6e4f8.chunk.js.map",
-    "runtime-main.js": "/legend-of-void/static/js/runtime-main.8ee1acf2.js",
-    "runtime-main.js.map": "/legend-of-void/static/js/runtime-main.8ee1acf2.js.map",
-    "static/js/2.8806d6d2.chunk.js": "/legend-of-void/static/js/2.8806d6d2.chunk.js",
-    "static/js/2.8806d6d2.chunk.js.map": "/legend-of-void/static/js/2.8806d6d2.chunk.js.map",
-    "static/js/3.fcd73a35.chunk.js": "/legend-of-void/static/js/3.fcd73a35.chunk.js",
-    "static/js/3.fcd73a35.chunk.js.map": "/legend-of-void/static/js/3.fcd73a35.chunk.js.map",
-    "static/js/4.45a01920.chunk.js": "/legend-of-void/static/js/4.45a01920.chunk.js",
-    "static/js/4.45a01920.chunk.js.map": "/legend-of-void/static/js/4.45a01920.chunk.js.map",
-    "static/js/5.7e20f542.chunk.js": "/legend-of-void/static/js/5.7e20f542.chunk.js",
-    "static/js/5.7e20f542.chunk.js.map": "/legend-of-void/static/js/5.7e20f542.chunk.js.map",
+    "main.css": "/legend-of-void/static/css/main.67fcfc0c.chunk.css",
+    "main.js": "/legend-of-void/static/js/main.0edf0a63.chunk.js",
+    "main.js.map": "/legend-of-void/static/js/main.0edf0a63.chunk.js.map",
+    "runtime-main.js": "/legend-of-void/static/js/runtime-main.f7730042.js",
+    "runtime-main.js.map": "/legend-of-void/static/js/runtime-main.f7730042.js.map",
+    "static/js/2.fdbf7792.chunk.js": "/legend-of-void/static/js/2.fdbf7792.chunk.js",
+    "static/js/2.fdbf7792.chunk.js.map": "/legend-of-void/static/js/2.fdbf7792.chunk.js.map",
+    "static/js/3.ebbb5fd4.chunk.js": "/legend-of-void/static/js/3.ebbb5fd4.chunk.js",
+    "static/js/3.ebbb5fd4.chunk.js.map": "/legend-of-void/static/js/3.ebbb5fd4.chunk.js.map",
+    "static/js/4.9f101501.chunk.js": "/legend-of-void/static/js/4.9f101501.chunk.js",
+    "static/js/4.9f101501.chunk.js.map": "/legend-of-void/static/js/4.9f101501.chunk.js.map",
+    "static/js/5.aa713f4b.chunk.js": "/legend-of-void/static/js/5.aa713f4b.chunk.js",
+    "static/js/5.aa713f4b.chunk.js.map": "/legend-of-void/static/js/5.aa713f4b.chunk.js.map",
     "index.html": "/legend-of-void/index.html",
-    "static/css/main.16a63868.chunk.css.map": "/legend-of-void/static/css/main.16a63868.chunk.css.map",
-    "static/js/2.8806d6d2.chunk.js.LICENSE.txt": "/legend-of-void/static/js/2.8806d6d2.chunk.js.LICENSE.txt",
-    "static/js/3.fcd73a35.chunk.js.LICENSE.txt": "/legend-of-void/static/js/3.fcd73a35.chunk.js.LICENSE.txt",
-    "static/js/4.45a01920.chunk.js.LICENSE.txt": "/legend-of-void/static/js/4.45a01920.chunk.js.LICENSE.txt",
-    "static/js/5.7e20f542.chunk.js.LICENSE.txt": "/legend-of-void/static/js/5.7e20f542.chunk.js.LICENSE.txt"
+    "static/css/main.67fcfc0c.chunk.css.map": "/legend-of-void/static/css/main.67fcfc0c.chunk.css.map",
+    "static/js/2.fdbf7792.chunk.js.LICENSE.txt": "/legend-of-void/static/js/2.fdbf7792.chunk.js.LICENSE.txt",
+    "static/js/3.ebbb5fd4.chunk.js.LICENSE.txt": "/legend-of-void/static/js/3.ebbb5fd4.chunk.js.LICENSE.txt",
+    "static/js/4.9f101501.chunk.js.LICENSE.txt": "/legend-of-void/static/js/4.9f101501.chunk.js.LICENSE.txt",
+    "static/js/5.aa713f4b.chunk.js.LICENSE.txt": "/legend-of-void/static/js/5.aa713f4b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ee1acf2.js",
-    "static/js/2.8806d6d2.chunk.js",
-    "static/css/main.16a63868.chunk.css",
-    "static/js/main.29f6e4f8.chunk.js"
+    "static/js/runtime-main.f7730042.js",
+    "static/js/2.fdbf7792.chunk.js",
+    "static/css/main.67fcfc0c.chunk.css",
+    "static/js/main.0edf0a63.chunk.js"
   ]
 }
