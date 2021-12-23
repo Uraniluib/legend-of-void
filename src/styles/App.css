@@ -35,3 +35,6 @@ p a:hover {
   color: #546e7a;
   text-decoration: none;
 }
+p {
+  line-height: 1.5rem;
+}
