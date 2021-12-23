@@ -38,3 +38,6 @@ p a:hover {
 p {
   line-height: 1.5rem;
 }
+p p {
+  margin: 0 0 0 0 !important;
+}
