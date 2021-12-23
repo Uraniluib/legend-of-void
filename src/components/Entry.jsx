@@ -13,12 +13,14 @@ import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
 import ReactMarkdown from 'react-markdown';
 import { parseMarkdown } from './../utils/utils.jsx';
+import { useTheme } from '@mui/material/styles';
 import useDataFetchAction from './../stores/actions/dataFetchAction.jsx';
 
 const ROOT_URL = 'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/';
 
 export default function Entry() {
     const params = useParams();
+    const theme = useTheme();
     const { state: article } = useDataFetchAction(ROOT_URL + 'articles/' + params.id + '.md', null);
     const { state: figure } = useDataFetchAction(ROOT_URL + 'images/' + params.id + '.jpg', null);
     const { state: info } = useDataFetchAction(ROOT_URL + 'cards/' + params.id + '.json', null);
@@ -58,13 +60,13 @@ export default function Entry() {
                                     info.data.nature && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('本源：' + info.data.nature + '（' + info.data.foreignNature + '）')} /></Typography>
                                 }
                                 {
-                                    info.data.alias && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('别名：' + info.data.alias.join('、'))} /></Typography>
+                                    info.data.alias && info.data.alias.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('别名：' + info.data.alias.join('、'))} /></Typography>
                                 }
                                 {
-                                    info.data.ethnicity && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('种族：' + info.data.ethnicity.join('、'))} /></Typography>
+                                    info.data.ethnicity && info.data.ethnicity.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('种族：' + info.data.ethnicity.join('、'))} /></Typography>
                                 }
                                 {
-                                    info.data.nationality && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('民族：' + info.data.nationality.join('、'))} /></Typography>
+                                    info.data.nationality && info.data.nationality.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('民族：' + info.data.nationality.join('、'))} /></Typography>
                                 }
                                 <Divider sx={{ marginBottom: '0.25em' }} />
                                 {
@@ -74,10 +76,10 @@ export default function Entry() {
                                     info.data.died && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('死亡：' + info.data.died.time + '，' + info.data.died.location)} /></Typography>
                                 }
                                 {
-                                    info.data.occupation && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('职业：' + info.data.occupation.join('、'))} /></Typography>
+                                    info.data.occupations && info.data.occupations.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('职业：' + info.data.occupations.join('、'))} /></Typography>
                                 }
                                 {
-                                    info.data.tools && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('器具：' + info.data.tools.join('、'))} /></Typography>
+                                    info.data.tools && info.data.tools.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('器具：' + info.data.tools.join('、'))} /></Typography>
                                 }
                                 <Divider sx={{ marginBottom: '0.25em' }} />
                                 {
@@ -91,15 +93,15 @@ export default function Entry() {
                                         {
                                             info.data.eyeColor.normal &&
                                             <span>
-                                                 常态 <Chip label={info.data.eyeColor.normal.name} 
-                                                 style={{backgroundColor: info.data.eyeColor.normal.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.eyeColor.normal.code)} />
+                                                常态 <Chip label={info.data.eyeColor.normal.name}
+                                                    style={{ backgroundColor: info.data.eyeColor.normal.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(info.data.eyeColor.normal.code)} />
                                             </span>
                                         }
                                         {
                                             info.data.eyeColor.disguise &&
                                             <span>
-                                                 | 伪装 <Chip label={info.data.eyeColor.disguise.name} 
-                                                 style={{backgroundColor: info.data.eyeColor.disguise.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.eyeColor.disguise.code)} />
+                                                | 伪装 <Chip label={info.data.eyeColor.disguise.name}
+                                                    style={{ backgroundColor: info.data.eyeColor.disguise.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(info.data.eyeColor.disguise.code)} />
                                             </span>
                                         }
                                     </Typography>
@@ -109,15 +111,15 @@ export default function Entry() {
                                         {
                                             info.data.hairColor.normal &&
                                             <span>
-                                                 常态 <Chip label={info.data.hairColor.normal.name} 
-                                                 style={{backgroundColor: info.data.hairColor.normal.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.hairColor.normal.code)} />
+                                                常态 <Chip label={info.data.hairColor.normal.name}
+                                                    style={{ backgroundColor: info.data.hairColor.normal.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(info.data.hairColor.normal.code)} />
                                             </span>
                                         }
                                         {
                                             info.data.hairColor.disguise &&
                                             <span>
-                                                 | 伪装 <Chip label={info.data.hairColor.disguise.name} 
-                                                 style={{backgroundColor: info.data.hairColor.disguise.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.hairColor.disguise.code)} />
+                                                | 伪装 <Chip label={info.data.hairColor.disguise.name}
+                                                    style={{ backgroundColor: info.data.hairColor.disguise.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(info.data.hairColor.disguise.code)} />
                                             </span>
                                         }
                                     </Typography>
@@ -127,34 +129,60 @@ export default function Entry() {
                                         {
                                             info.data.hairColor.normal &&
                                             <span>
-                                                 常态 <Chip label={info.data.skinColor.normal.name} 
-                                                 style={{backgroundColor: info.data.skinColor.normal.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.skinColor.normal.code)} />
+                                                常态 <Chip label={info.data.skinColor.normal.name}
+                                                    style={{ backgroundColor: info.data.skinColor.normal.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(info.data.skinColor.normal.code)} />
                                             </span>
                                         }
                                         {
                                             info.data.skinColor.disguise &&
                                             <span>
-                                                 | 伪装 <Chip label={info.data.skinColor.disguise.name} 
-                                                 style={{backgroundColor: info.data.skinColor.disguise.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.skinColor.disguise.code)} />
+                                                | 伪装 <Chip label={info.data.skinColor.disguise.name}
+                                                    style={{ backgroundColor: info.data.skinColor.disguise.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(info.data.skinColor.disguise.code)} />
                                             </span>
                                         }
                                     </Typography>
                                 }
                                 {
-                                    info.data.feature && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('特征：' + info.data.feature.join('、'))} /></Typography>
+                                    info.data.feature && info.data.feature.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('特征：' + info.data.feature.join('、'))} /></Typography>
                                 }
                                 <Divider sx={{ marginBottom: '0.25em' }} />
                                 {
-                                    info.data.preferedColor && <Typography gutterBottom variant="body2" component="div">着色：
+                                    info.data.preferredColor && <Typography gutterBottom variant="body2" component="div">着色：
                                         {
-                                            info.data.preferedColor.map((e) => {
-                                                <span>
-                                                 <Chip label={info.data.preferedColor.name} 
-                                                 style={{backgroundColor: info.data.preferedColor.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.preferedColor.code)} />
-                                            </span>
-                                            })
+                                            info.data.preferredColor.map((e, i) =>
+                                                <span key={e.code + i}>
+                                                    <Chip label={e.name}
+                                                        style={{ backgroundColor: e.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(e.code)} />{" "}
+                                                </span>
+                                            )
                                         }
                                     </Typography>
+                                }
+                                {
+                                    info.data.preferences && info.data.preferences.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('偏好：' + info.data.preferences.join('、'))} /></Typography>
+                                }
+                                {
+                                    info.data.contributions && info.data.contributions.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('功绩：' + info.data.contributions.join('、'))} /></Typography>
+                                }
+                                {
+                                    info.data.notableWorks && info.data.notableWorks.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('著作：' + info.data.notableWorks.join('、'))} /></Typography>
+                                }
+                                <Divider sx={{ marginBottom: '0.25em' }} />
+                                {
+                                    info.data.siblings && info.data.siblings.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('手足：' + info.data.siblings.join('、'))} /></Typography>
+                                }
+                                {
+                                    info.data.spouses && info.data.spouses.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('配偶：' + info.data.spouses.join('、'))} /></Typography>
+                                }
+                                {
+                                    info.data.children && info.data.children.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('孩子：' + info.data.children.join('、'))} /></Typography>
+                                }
+                                {
+                                    info.data.imageAuthor && <Typography align="right" variant="body2" component="div">
+                                        <Chip label={parseMarkdown('插图作者：' + info.data.imageAuthor)}
+                                            style={{ backgroundColor: theme.palette.primary.light, height: '1.5em' }} />
+                                    </Typography>
+
                                 }
                             </>
                         }
