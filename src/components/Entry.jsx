@@ -77,9 +77,6 @@ export default function Entry() {
                                     info.data.occupation && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('职业：' + info.data.occupation.join('、'))} /></Typography>
                                 }
                                 {
-                                    info.data.occupation && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('职业：' + info.data.occupation.join('、'))} /></Typography>
-                                }
-                                {
                                     info.data.tools && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('器具：' + info.data.tools.join('、'))} /></Typography>
                                 }
                                 <Divider sx={{ marginBottom: '0.25em' }} />
@@ -94,18 +91,68 @@ export default function Entry() {
                                         {
                                             info.data.eyeColor.normal &&
                                             <span>
-                                                 常态 <Chip 
-                                                 label={info.data.eyeColor.normal.name} 
-                                                 style={{backgroundColor: info.data.eyeColor.normal.code, height: '1.5em'}} />
+                                                 常态 <Chip label={info.data.eyeColor.normal.name} 
+                                                 style={{backgroundColor: info.data.eyeColor.normal.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.eyeColor.normal.code)} />
                                             </span>
                                         }
                                         {
                                             info.data.eyeColor.disguise &&
                                             <span>
-                                                 | 伪装 <Chip 
-                                                 label={info.data.eyeColor.disguise.name} 
-                                                 style={{backgroundColor: info.data.eyeColor.disguise.code, height: '1.5em'}} />
+                                                 | 伪装 <Chip label={info.data.eyeColor.disguise.name} 
+                                                 style={{backgroundColor: info.data.eyeColor.disguise.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.eyeColor.disguise.code)} />
                                             </span>
+                                        }
+                                    </Typography>
+                                }
+                                {
+                                    info.data.hairColor && <Typography gutterBottom variant="body2" component="div">发色：
+                                        {
+                                            info.data.hairColor.normal &&
+                                            <span>
+                                                 常态 <Chip label={info.data.hairColor.normal.name} 
+                                                 style={{backgroundColor: info.data.hairColor.normal.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.hairColor.normal.code)} />
+                                            </span>
+                                        }
+                                        {
+                                            info.data.hairColor.disguise &&
+                                            <span>
+                                                 | 伪装 <Chip label={info.data.hairColor.disguise.name} 
+                                                 style={{backgroundColor: info.data.hairColor.disguise.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.hairColor.disguise.code)} />
+                                            </span>
+                                        }
+                                    </Typography>
+                                }
+                                {
+                                    info.data.skinColor && <Typography gutterBottom variant="body2" component="div">肤色：
+                                        {
+                                            info.data.hairColor.normal &&
+                                            <span>
+                                                 常态 <Chip label={info.data.skinColor.normal.name} 
+                                                 style={{backgroundColor: info.data.skinColor.normal.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.skinColor.normal.code)} />
+                                            </span>
+                                        }
+                                        {
+                                            info.data.skinColor.disguise &&
+                                            <span>
+                                                 | 伪装 <Chip label={info.data.skinColor.disguise.name} 
+                                                 style={{backgroundColor: info.data.skinColor.disguise.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.skinColor.disguise.code)} />
+                                            </span>
+                                        }
+                                    </Typography>
+                                }
+                                {
+                                    info.data.feature && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('特征：' + info.data.feature.join('、'))} /></Typography>
+                                }
+                                <Divider sx={{ marginBottom: '0.25em' }} />
+                                {
+                                    info.data.preferedColor && <Typography gutterBottom variant="body2" component="div">着色：
+                                        {
+                                            info.data.preferedColor.map((e) => {
+                                                <span>
+                                                 <Chip label={info.data.preferedColor.name} 
+                                                 style={{backgroundColor: info.data.preferedColor.code, height: '1.5em'}} onClick={() => navigator.clipboard.writeText(info.data.preferedColor.code)} />
+                                            </span>
+                                            })
                                         }
                                     </Typography>
                                 }

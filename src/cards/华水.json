@@ -18,7 +18,7 @@
     "hairColor": {"normal": {"name": "金", "code": "#FFD700"}},
     "skinColor": {"normal": {"name": "沙石黄", "code": "#E5B751"}},
     "feature": ["高额", "薄唇", "丹凤眼", "三眼皮", "长发过腰", "戴抹额", "金属臂环", "衣粗麻长衫", "饰赭石色硬羽"],
-    "preferedColor": [{"name": "月白", "code": "#EEF7F2"}, {"name": "赭石", "code": "#862617"}],
+    "preferredColor": [{"name": "月白", "code": "#EEF7F2"}, {"name": "赭石", "code": "#862617"}],
     "preferences": [],
     "contributions": ["[[汛岚抗洪]]"],
     "notableWorks": [],
