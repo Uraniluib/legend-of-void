@@ -5,12 +5,11 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
-import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
+import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { parseMarkdown } from './../utils/utils.jsx';
 import { useTheme } from '@mui/material/styles';
@@ -179,7 +178,7 @@ export default function Entry() {
                                 }
                                 {
                                     info.data.imageAuthor && <Typography align="right" variant="body2" component="div">
-                                        <Chip label={parseMarkdown('插图作者：' + info.data.imageAuthor)}
+                                        <Chip label={'插图作者：' + info.data.imageAuthor}
                                             style={{ backgroundColor: theme.palette.primary.light, height: '1.5em' }} />
                                     </Typography>
 
@@ -187,16 +186,23 @@ export default function Entry() {
                             </>
                         }
                     </CardContent>
-                    {/* <CardActions>
-                        <Button size="small">分享</Button>
-                        <Button size="small">查看更多</Button>
-                    </CardActions> */}
                 </Card>
             </Grid>
             <Grid item align='left' xs={12} sm={6} md={7} lg={8} xl={9}>
-                {article.isLoading && <Typography variant="body" component="div">正在加载……</Typography>}
-                {article.isError && <Typography variant="body" component="div">暂无内容，请努力耕耘。</Typography>}
-                {!article.isLoading && !article.isError && <ReactMarkdown children={parseMarkdown(article.data)} />}
+                <Grid item xs={12}>
+                    {
+                        !info.isLoading && !info.isError && info.data && info.data.categories && info.data.categories.length !== 0 && info.data.categories.map((e, i) =>
+                            <Link key={e + i} to={"/entry/" + e}>
+                                <Chip label={e}  clickable={true} />{" "}
+                            </Link>
+                        )
+                    }
+                </Grid>
+                <Grid item xs={12}>
+                    {article.isLoading && <Typography variant="body" component="div">正在加载……</Typography>}
+                    {article.isError && <Typography variant="body" component="div">暂无内容，请努力耕耘。</Typography>}
+                    {!article.isLoading && !article.isError && <ReactMarkdown children={parseMarkdown(article.data)} />}
+                </Grid>
             </Grid>
         </Grid>
 
