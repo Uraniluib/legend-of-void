@@ -15,6 +15,7 @@ import ProperNoun from './components/ProperNoun.jsx';
 import Astrogeophy from './components/Astrogeophy.jsx';
 import Story from './components/Story.jsx';
 import Entry from './components/Entry.jsx';
+import Categories from './components/Categories.jsx';
 
 /* Use Middleware */
 // const createStoreWithMiddle = applyMiddleware(ReduxPromise)(createStore);
@@ -36,6 +37,8 @@ ReactDOM.render(
         <Route path="/astrogeophy" element={<Astrogeophy />} />
         {/* 小说正文 */}
         <Route path="/story" element={<Story />} />
+        {/* 分类页面 */}
+        <Route path="/categories/:id" element={<Categories />} />
         {/* 词条页面 */}
         <Route path="/entry/:id" element={<Entry />} />
         {/* 主页 */}

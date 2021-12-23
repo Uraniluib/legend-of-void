@@ -192,7 +192,7 @@ export default function Entry() {
                 <Grid item xs={12}>
                     {
                         !info.isLoading && !info.isError && info.data && info.data.categories && info.data.categories.length !== 0 && info.data.categories.map((e, i) =>
-                            <Link key={e + i} to={"/entry/" + e}>
+                            <Link key={e + i} to={"/categories/" + e}>
                                 <Chip label={e}  clickable={true} />{" "}
                             </Link>
                         )
