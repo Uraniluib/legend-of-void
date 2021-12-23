@@ -1,0 +1,1 @@
+export const ROOT_URL = 'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/';

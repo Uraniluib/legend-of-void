@@ -7,15 +7,15 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './components/App.jsx';
 // import { rootReducer } from './reducers/root.reducer';
-import Homepage from './components/Homepage.jsx';
-import People from './components/People.jsx';
-import Chronicle from './components/Chronicle.jsx';
-import Ethnicity from './components/Ethnicity.jsx';
-import ProperNoun from './components/ProperNoun.jsx';
-import Astrogeophy from './components/Astrogeophy.jsx';
-import Story from './components/Story.jsx';
-import Entry from './components/Entry.jsx';
-import Categories from './components/Categories.jsx';
+import Homepage from './components/navigations/Homepage.jsx';
+import People from './components/navigations/People.jsx';
+import Chronicle from './components/navigations/Chronicle.jsx';
+import Ethnicity from './components/navigations/Ethnicity.jsx';
+import ProperNoun from './components/navigations/ProperNoun.jsx';
+import Astrogeophy from './components/navigations/Astrogeophy.jsx';
+import Story from './components/navigations/Story.jsx';
+import Entry from './components/navigations/Entry.jsx';
+import Categories from './components/navigations/Categories.jsx';
 
 /* Use Middleware */
 // const createStoreWithMiddle = applyMiddleware(ReduxPromise)(createStore);
@@ -37,9 +37,9 @@ ReactDOM.render(
         <Route path="/astrogeophy" element={<Astrogeophy />} />
         {/* 小说正文 */}
         <Route path="/story" element={<Story />} />
-        {/* 分类页面 */}
+        {/* 分类 */}
         <Route path="/categories/:id" element={<Categories />} />
-        {/* 词条页面 */}
+        {/* 词条 */}
         <Route path="/entry/:id" element={<Entry />} />
         {/* 主页 */}
         <Route path="/*" element={<Homepage />} />
