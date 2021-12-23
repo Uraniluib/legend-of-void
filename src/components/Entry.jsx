@@ -1,35 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from "react-router-dom";
 import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import Skeleton from '@mui/material/Skeleton';
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import ReactMarkdown from 'react-markdown';
 import { parseMarkdown } from './../utils/utils.jsx';
-
+import useDataFetchAction from './../stores/actions/dataFetchAction.jsx';
 
 export default function Entry() {
-    let params = useParams();
-    const [article, setArticle] = useState();
-
-    useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/articles/' + params.id + ".md")
-            .then(res => {
-                if (res.ok) {
-                    return res.text()
-                } else if (res.status === 404) {
-                    return Promise.reject('error 404')
-                } else {
-                    return Promise.reject('some other error: ' + res.status)
-                }
-            })
-            .then(data => setArticle(parseMarkdown(data)))
-            .catch(() => setArticle(parseMarkdown(params.id + "暂无内容，请努力耕耘。")));
-    });
+    const params = useParams();
+    const { state: article } = useDataFetchAction('https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/articles/' + params.id + '.md', null);
+    const { state: figure } = useDataFetchAction('https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/' + params.id + '.jpg', null);
 
     return (
         <Grid container
@@ -37,13 +24,23 @@ export default function Entry() {
             sx={{ margin: '1em 1em 1em 1em', padding: '0 1em 1em 0', width: 'auto' }}
             spacing={2}>
             <Grid item xs={12} sm={6} md={5} lg={4} xl={3}>
-                <Card sx={{ maxWidth: '400px'}}>
-                    <CardMedia
+                <Card sx={{ maxWidth: '400px' }}>
+                    {figure.isLoading && <Skeleton variant="rectangular" width="auto" height={240} />}
+                    {figure.isError && <CardMedia
                         component="img"
                         height="240"
-                        image={"https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/" + params.id + ".jpg"}
+                        image={'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/default.jpg'}
                         alt={params.id}
                     />
+                    }
+                    {!figure.isLoading && !figure.isError &&
+                        <CardMedia
+                            component="img"
+                            height="240"
+                            image={'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/images/' + params.id + '.jpg'}
+                            alt={params.id}
+                        />
+                    }
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
                             {params.id}
@@ -72,7 +69,9 @@ export default function Entry() {
                 </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={7} lg={8} xl={9}>
-                <ReactMarkdown children={article} />
+                {article.isLoading && <Typography variant="body" component="div">正在加载……</Typography>}
+                {article.isError && <Typography variant="body" component="div">暂无内容，请努力耕耘。</Typography>}
+                {!article.isLoading && !article.isError && <ReactMarkdown children={parseMarkdown(article.data)} />}
             </Grid>
         </Grid>
 
