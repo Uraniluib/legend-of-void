@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/legend-of-void/static/css/main.be27d02b.chunk.css",
-    "main.js": "/legend-of-void/static/js/main.b560f992.chunk.js",
-    "main.js.map": "/legend-of-void/static/js/main.b560f992.chunk.js.map",
+    "main.js": "/legend-of-void/static/js/main.7348ab0a.chunk.js",
+    "main.js.map": "/legend-of-void/static/js/main.7348ab0a.chunk.js.map",
     "runtime-main.js": "/legend-of-void/static/js/runtime-main.b3ee6a78.js",
     "runtime-main.js.map": "/legend-of-void/static/js/runtime-main.b3ee6a78.js.map",
     "static/js/2.6f8fdb4a.chunk.js": "/legend-of-void/static/js/2.6f8fdb4a.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.b3ee6a78.js",
     "static/js/2.6f8fdb4a.chunk.js",
     "static/css/main.be27d02b.chunk.css",
-    "static/js/main.b560f992.chunk.js"
+    "static/js/main.7348ab0a.chunk.js"
   ]
 }
