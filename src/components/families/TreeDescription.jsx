@@ -32,6 +32,10 @@ import HexagonOutlinedIcon from '@mui/icons-material/HexagonOutlined';
 import HexagonTwoToneIcon from '@mui/icons-material/HexagonTwoTone';
 import FilterVintageOutlinedIcon from '@mui/icons-material/FilterVintageOutlined';
 import FilterVintageTwoToneIcon from '@mui/icons-material/FilterVintageTwoTone';
+import WarningIcon from '@mui/icons-material/Warning';
+import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
 
 // 生物学意义上的遗传家谱，来自家谱图制图规则
 // 与gender.actual/choose匹配：男为方块，女为圆形，无性别为圆角方块（茧生民）
@@ -216,31 +220,102 @@ const TreeDescription = () => {
                         <ListItem disableGutters>
                             <Grid item xs={1}>
                                 <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
-                                {/* <AllOutOutlinedIcon /> */}
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider sx={{ borderTop: '1px solid' }} />
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">婚姻关系</Typography>
+                            </Grid>
+                        </ListItem>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider><WarningIcon /></Divider>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">偷情/出轨</Typography>
+                            </Grid>
+                        </ListItem>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
                             </Grid>
                             <Grid item xs={5}>
                                 <Divider />
                             </Grid>
                             <Grid item xs={2}>
                                 <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                                {/* <AllOutTwoToneIcon /> */}
                             </Grid>
                             <Grid item xs={4} align="center">
-                                <Typography variant="body2">婚姻关系</Typography>
+                                <Typography variant="body2">性关系/同居</Typography>
+                            </Grid>
+                        </ListItem>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider><SafetyDividerIcon /></Divider>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">婚内分居</Typography>
+                            </Grid>
+                        </ListItem>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider><SafetyDividerIcon /><CloseOutlinedIcon /></Divider>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">分居后复合</Typography>
+                            </Grid>
+                        </ListItem>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider><HeartBrokenIcon /></Divider>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">离婚</Typography>
+                            </Grid>
+                        </ListItem>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider><HeartBrokenIcon /><CloseOutlinedIcon /></Divider>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">离婚后复婚</Typography>
                             </Grid>
                         </ListItem>
                     </Grid>
-                    <Divider textAlign="left"><AllOutOutlinedIcon />    <AllOutTwoToneIcon /></Divider>
-                    <AllOutOutlinedIcon /><Divider /><AllOutTwoToneIcon />
-                    {/* <List disablePadding dense={true} sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                    
-                        <ListItem>
-                            
-                            
-                            <ListItemText id="actual-common-choose-common" primary="通性（茧生）" secondary="本性通/择性通" />
-
-                        </ListItem>
-                    </List> */}
                 </AccordionDetails>
             </Accordion>
             <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
