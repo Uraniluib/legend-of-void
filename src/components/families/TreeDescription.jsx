@@ -1,6 +1,7 @@
 import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import Grid from '@mui/material/Grid';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
@@ -37,7 +38,7 @@ import FilterVintageTwoToneIcon from '@mui/icons-material/FilterVintageTwoTone';
 
 const TreeDescription = () => {
 
-    const [checked, setChecked] = React.useState(['accc']);
+    const [checked, setChecked] = React.useState(['']);
     const [expanded, setExpanded] = React.useState('panel1');
 
     const handleToggle = (value) => () => {
@@ -75,11 +76,12 @@ const TreeDescription = () => {
                         <ListItem disableGutters>
                             <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
                             <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            <ListItemText id="actual-common-choose-common" primary="通性（茧生）" secondary="本性通/择性通" />
+                            <ListItemText id="actual-common-choose-common" primary="通性" secondary="本性通/择性通" />
                             <Switch
                                 edge="end"
+                                color="success"
                                 onChange={handleToggle('accc')}
-                                checked={checked.indexOf('accc') !== -1}
+                                checked={checked.indexOf('accc') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-common-choose-common',
                                 }}
@@ -88,11 +90,12 @@ const TreeDescription = () => {
                         <ListItem disableGutters>
                             <ListItemAvatar><Avatar><CenterFocusStrongOutlinedIcon /></Avatar></ListItemAvatar>
                             <ListItemAvatar><Avatar><FilterCenterFocusOutlinedIcon /></Avatar></ListItemAvatar>
-                            <ListItemText id="actual-common-choose-male" primary="通择男性（茧生）" secondary="本性通/择性男" />
+                            <ListItemText id="actual-common-choose-male" primary="通择男性" secondary="本性通/择性男" />
                             <Switch
                                 edge="end"
+                                color="info"
                                 onChange={handleToggle('accm')}
-                                checked={checked.indexOf('accm') !== -1}
+                                checked={checked.indexOf('accm') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-common-choose-male',
                                 }}
@@ -101,11 +104,12 @@ const TreeDescription = () => {
                         <ListItem disableGutters>
                             <ListItemAvatar><Avatar><AlbumOutlinedIcon /></Avatar></ListItemAvatar>
                             <ListItemAvatar><Avatar><AlbumTwoToneIcon /></Avatar></ListItemAvatar>
-                            <ListItemText id="actual-common-choose-female" primary="通择女性（茧生）" secondary="本性通/择性女" />
+                            <ListItemText id="actual-common-choose-female" primary="通择女性" secondary="本性通/择性女" />
                             <Switch
                                 edge="end"
+                                color="error"
                                 onChange={handleToggle('accf')}
-                                checked={checked.indexOf('accf') !== -1}
+                                checked={checked.indexOf('accf') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-common-choose-female',
                                 }}
@@ -117,8 +121,9 @@ const TreeDescription = () => {
                             <ListItemText id="actual-male-choose-male" primary="男性" secondary="本性男/择性男" />
                             <Switch
                                 edge="end"
+                                color="info"
                                 onChange={handleToggle('amcm')}
-                                checked={checked.indexOf('amcm') !== -1}
+                                checked={checked.indexOf('amcm') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-male-choose-male',
                                 }}
@@ -130,8 +135,9 @@ const TreeDescription = () => {
                             <ListItemText id="actual-female-choose-female" primary="女性" secondary="本性女/择性女" />
                             <Switch
                                 edge="end"
+                                color="error"
                                 onChange={handleToggle('afcf')}
-                                checked={checked.indexOf('afcf') !== -1}
+                                checked={checked.indexOf('afcf') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-female-choose-female',
                                 }}
@@ -143,8 +149,9 @@ const TreeDescription = () => {
                             <ListItemText id="actual-male-choose-female" primary="男择女性" secondary="本性男/择性女" />
                             <Switch
                                 edge="end"
+                                color="error"
                                 onChange={handleToggle('amcf')}
-                                checked={checked.indexOf('amcf') !== -1}
+                                checked={checked.indexOf('amcf') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-male-choose-female',
                                 }}
@@ -156,8 +163,9 @@ const TreeDescription = () => {
                             <ListItemText id="actual-female-choose-male" primary="女择男性" secondary="本性女/择性男" />
                             <Switch
                                 edge="end"
+                                color="info"
                                 onChange={handleToggle('afcm')}
-                                checked={checked.indexOf('afcm') !== -1}
+                                checked={checked.indexOf('afcm') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-female-choose-male',
                                 }}
@@ -169,8 +177,9 @@ const TreeDescription = () => {
                             <ListItemText id="actual-none-choose-none" primary="无性" secondary="本性无" />
                             <Switch
                                 edge="end"
+                                color="success"
                                 onChange={handleToggle('ancn')}
-                                checked={checked.indexOf('ancn') !== -1}
+                                checked={checked.indexOf('ancn') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-none-choose-none',
                                 }}
@@ -183,7 +192,7 @@ const TreeDescription = () => {
                             <Switch
                                 edge="end"
                                 onChange={handleToggle('aece')}
-                                checked={checked.indexOf('aece') !== -1}
+                                checked={checked.indexOf('aece') === -1}
                                 inputProps={{
                                     'aria-labelledby': 'actual-ele-choose-ele',
                                 }}
@@ -198,14 +207,40 @@ const TreeDescription = () => {
                     aria-controls="panel2bh-content"
                     id="panel2bh-header"
                 >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>双亲关系</Typography>
+                    <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: '600' }}>双亲关系</Typography>
+                    {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>普通/死亡|断链</Typography> */}
                 </AccordionSummary>
+                <Divider />
                 <AccordionDetails>
-                    <Typography>
-                        Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-                        varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-                        laoreet.
-                    </Typography>
+                    <Grid container align='left' component={List}>
+                        <ListItem disableGutters>
+                            <Grid item xs={1}>
+                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                                {/* <AllOutOutlinedIcon /> */}
+                            </Grid>
+                            <Grid item xs={5}>
+                                <Divider />
+                            </Grid>
+                            <Grid item xs={2}>
+                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
+                                {/* <AllOutTwoToneIcon /> */}
+                            </Grid>
+                            <Grid item xs={4} align="center">
+                                <Typography variant="body2">婚姻关系</Typography>
+                            </Grid>
+                        </ListItem>
+                    </Grid>
+                    <Divider textAlign="left"><AllOutOutlinedIcon />    <AllOutTwoToneIcon /></Divider>
+                    <AllOutOutlinedIcon /><Divider /><AllOutTwoToneIcon />
+                    {/* <List disablePadding dense={true} sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                    
+                        <ListItem>
+                            
+                            
+                            <ListItemText id="actual-common-choose-common" primary="通性（茧生）" secondary="本性通/择性通" />
+
+                        </ListItem>
+                    </List> */}
                 </AccordionDetails>
             </Accordion>
             <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
@@ -214,10 +249,10 @@ const TreeDescription = () => {
                     aria-controls="panel3bh-content"
                     id="panel3bh-header"
                 >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                        亲子关系
-                    </Typography>
+                    <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: '600' }}>亲子关系</Typography>
+                    {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>普通/死亡|断链</Typography> */}
                 </AccordionSummary>
+                <Divider />
                 <AccordionDetails>
                     <Typography>
                         Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
@@ -231,8 +266,10 @@ const TreeDescription = () => {
                     aria-controls="panel4bh-content"
                     id="panel4bh-header"
                 >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>人际关系</Typography>
+                    <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: '600' }}>人际关系</Typography>
+                    {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>普通/死亡|断链</Typography> */}
                 </AccordionSummary>
+                <Divider />
                 <AccordionDetails>
                     <Typography>
                         Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
