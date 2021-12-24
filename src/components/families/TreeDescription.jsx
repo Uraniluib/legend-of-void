@@ -32,10 +32,14 @@ import HexagonOutlinedIcon from '@mui/icons-material/HexagonOutlined';
 import HexagonTwoToneIcon from '@mui/icons-material/HexagonTwoTone';
 import FilterVintageOutlinedIcon from '@mui/icons-material/FilterVintageOutlined';
 import FilterVintageTwoToneIcon from '@mui/icons-material/FilterVintageTwoTone';
-import WarningIcon from '@mui/icons-material/Warning';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import SafetyDividerIcon from '@mui/icons-material/SafetyDivider';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
+import HeartBrokenOutlinedIcon from '@mui/icons-material/HeartBrokenOutlined';
+import BlurOffIcon from '@mui/icons-material/BlurOff';
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import PregnantWomanIcon from '@mui/icons-material/PregnantWoman';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 // 生物学意义上的遗传家谱，来自家谱图制图规则
 // 与gender.actual/choose匹配：男为方块，女为圆形，无性别为圆角方块（茧生民）
@@ -43,7 +47,7 @@ import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
 const TreeDescription = () => {
 
     const [checked, setChecked] = React.useState(['']);
-    const [expanded, setExpanded] = React.useState('panel1');
+    const [expanded, setExpanded] = React.useState('');
 
     const handleToggle = (value) => () => {
         const currentIndex = checked.indexOf(value);
@@ -216,101 +220,69 @@ const TreeDescription = () => {
                 </AccordionSummary>
                 <Divider />
                 <AccordionDetails>
-                    <Grid container align='left' component={List}>
+                    <Grid container align="left" component={List}>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
-                            </Grid>
-                            <Grid item xs={5}>
-                                <Divider sx={{ borderTop: '1px solid' }} />
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center"><Divider sx={{ borderTop: '1px solid' }} /></Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">婚姻关系</Typography>
                             </Grid>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center">
+                                <Divider textAlign="left"><WarningAmberIcon fontSize="small" /></Divider>
                             </Grid>
-                            <Grid item xs={5}>
-                                <Divider><WarningIcon /></Divider>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">偷情/出轨</Typography>
                             </Grid>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
-                            </Grid>
-                            <Grid item xs={5}>
-                                <Divider />
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center"><Divider /></Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">性关系/同居</Typography>
                             </Grid>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center">
+                                <Divider><SafetyDividerIcon fontSize="small" /></Divider>
                             </Grid>
-                            <Grid item xs={5}>
-                                <Divider><SafetyDividerIcon /></Divider>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">婚内分居</Typography>
                             </Grid>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center">
+                                <Divider><SafetyDividerIcon fontSize="small" /><CloseOutlinedIcon fontSize="small" /></Divider>
                             </Grid>
-                            <Grid item xs={5}>
-                                <Divider><SafetyDividerIcon /><CloseOutlinedIcon /></Divider>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">分居后复合</Typography>
                             </Grid>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center">
+                                <Divider><HeartBrokenOutlinedIcon fontSize="small" /></Divider>
                             </Grid>
-                            <Grid item xs={5}>
-                                <Divider><HeartBrokenIcon /></Divider>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">离婚</Typography>
                             </Grid>
                         </ListItem>
                         <ListItem disableGutters>
-                            <Grid item xs={1}>
-                                <ListItemAvatar><Avatar><AllOutOutlinedIcon /></Avatar></ListItemAvatar>
+                            <Grid item xs={1} align="right"><AllOutOutlinedIcon /></Grid>
+                            <Grid item xs={5} align="center">
+                                <Divider><HeartBrokenOutlinedIcon fontSize="small" /><CloseOutlinedIcon fontSize="small" /></Divider>
                             </Grid>
-                            <Grid item xs={5}>
-                                <Divider><HeartBrokenIcon /><CloseOutlinedIcon /></Divider>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <ListItemAvatar><Avatar><AllOutTwoToneIcon /></Avatar></ListItemAvatar>
-                            </Grid>
+                            <Grid item xs={2} align="left"><AllOutTwoToneIcon /></Grid>
                             <Grid item xs={4} align="center">
                                 <Typography variant="body2">离婚后复婚</Typography>
                             </Grid>
@@ -329,10 +301,38 @@ const TreeDescription = () => {
                 </AccordionSummary>
                 <Divider />
                 <AccordionDetails>
-                    <Typography>
-                        Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                        amet egestas eros, vitae egestas augue. Duis vel est augue.
-                    </Typography>
+                    <Grid container align="left" component={List}>
+                        <Grid item xs={2}>
+                            <Divider orientation="vertical" sx={{ height: "2.5em", width: "11.5px", borderRight: '1px solid' }}></Divider>
+                            <AllOutOutlinedIcon />
+                            <Typography variant="body2">亲生</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Divider orientation="vertical" sx={{ height: "2.5em", width: "11.5px" }}></Divider>
+                            <AllOutOutlinedIcon />
+                            <Typography variant="body2">收养</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Divider orientation="vertical" sx={{ height: "2.5em", width: "11.5px" }}></Divider>
+                            <BlurOffIcon />
+                            <Typography variant="body2">死亡</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Divider orientation="vertical" sx={{ height: "2.5em", width: "11.5px" }}></Divider>
+                            <PeopleOutlineIcon />
+                            <Typography variant="body2">孪生</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Divider orientation="vertical" sx={{ height: "2.5em", width: "11.5px" }}></Divider>
+                            <PregnantWomanIcon />
+                            <Typography variant="body2">怀孕</Typography>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <Divider orientation="vertical" sx={{ height: "2.5em", width: "11.5px" }}></Divider>
+                            <HelpOutlineOutlinedIcon />
+                            <Typography variant="body2">未知</Typography>
+                        </Grid>
+                    </Grid>
                 </AccordionDetails>
             </Accordion>
             <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
@@ -342,7 +342,6 @@ const TreeDescription = () => {
                     id="panel4bh-header"
                 >
                     <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: '600' }}>人际关系</Typography>
-                    {/* <Typography variant="body2" sx={{ color: 'text.secondary' }}>普通/死亡|断链</Typography> */}
                 </AccordionSummary>
                 <Divider />
                 <AccordionDetails>
