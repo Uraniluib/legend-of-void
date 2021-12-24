@@ -8,11 +8,11 @@ import IconButton from '@mui/material/IconButton';
 import ModeNightIcon from '@mui/icons-material/ModeNight';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import './../styles/App.css';
 import { lightTheme, darkTheme, useStyles } from './useStyles';
 import Header from './Header.jsx';
 import ScrollTop from "../components/ScrollTop.jsx"
 import { Copyright } from "../components/Copyright.jsx";
+import './../styles/App.css';
 
 function App(props) {
 
