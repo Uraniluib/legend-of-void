@@ -27,6 +27,9 @@ const PeopleCard = (p) => {
             {
                 p.nationality && p.nationality.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('民族：' + p.nationality.join('、'))} /></Typography>
             }
+            {
+                p.gender && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('本性：' + p.gender.actual + '| 择性：' + p.gender.choose)} /></Typography>
+            }
             <Divider sx={{ marginBottom: '0.25em' }} />
             {
                 p.born && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('出生：' + p.born.time + '，' + p.born.location)} /></Typography>

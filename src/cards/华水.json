@@ -8,6 +8,7 @@
     "alias": ["主神", "天神", "锌雨之母", "上古神祗"],
     "ethnicity": ["[[胎生民]]"],
     "nationality": ["[[涟漴民]]", "[[元素合]]"],
+    "gender": {"actual": "女", "choose": "女"},
     "born": { "time": "【[[青潭纪]]】末", "location": "[[神匣]]"},
     "died": { "time": "【[[正弦纪]]】初", "location": "[[蚀湖]]"},
     "occupations": ["神明", "火源师"],
