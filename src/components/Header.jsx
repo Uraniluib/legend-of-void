@@ -14,8 +14,8 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 
-const links = ['chronicle', 'people', 'ethnicity', 'propernoun', 'astrogeophy', 'story'];
-const pages = { 'chronicle': '大事年表', 'people': '人物介绍', 'ethnicity': '民族演变', 'propernoun': '专有名词', 'astrogeophy': '天文地理', 'story': '小说正文' }
+const links = ['chronicle', 'people', 'genealogy', 'ethnicity', 'propernoun', 'astrogeophy', 'story'];
+const pages = { 'chronicle': '大事年表', 'people': '人物介绍', 'genealogy': '家族谱系', 'ethnicity': '民族演变', 'propernoun': '专有名词', 'astrogeophy': '天文地理', 'story': '小说正文' }
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = (props) => {

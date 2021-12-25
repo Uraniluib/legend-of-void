@@ -55,3 +55,7 @@ p a:hover {
   border: solid 1px black;
   background-color: white;
 }
+
+.MuiDivider-root span  {
+  padding: 0pt;
+}

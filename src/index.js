@@ -9,6 +9,7 @@ import App from './components/App.jsx';
 // import { rootReducer } from './reducers/root.reducer';
 import Homepage from './components/navigations/Homepage.jsx';
 import People from './components/navigations/People.jsx';
+import Genealogy from './components/navigations/Genealogy.jsx';
 import Chronicle from './components/navigations/Chronicle.jsx';
 import Ethnicity from './components/navigations/Ethnicity.jsx';
 import ProperNoun from './components/navigations/ProperNoun.jsx';
@@ -27,6 +28,8 @@ ReactDOM.render(
       <Routes>
         {/* 编年史 */}
         <Route path="/chronicle" element={<Chronicle />} />
+        {/* 家族谱系 */}
+        <Route path="/genealogy" element={<Genealogy />} />
         {/* 人物介绍 */}
         <Route path="/people" element={<People />} />
         {/* 民族演变 */}
