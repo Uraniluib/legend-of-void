@@ -311,7 +311,7 @@ const TreeDescription = () => {
                         </Grid>
                         <Grid item xs={2}>
                             <Divider orientation="vertical" sx={{ height: "4em"}}><BlurOffIcon /></Divider>
-                            <Typography variant="body2">死亡</Typography>
+                            <Typography variant="body2">早夭</Typography>
                         </Grid>
                         <Grid item xs={2}>
                             <Divider orientation="vertical" sx={{ height: "4em"}}><PeopleOutlineIcon /></Divider>
