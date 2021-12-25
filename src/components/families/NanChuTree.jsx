@@ -60,7 +60,7 @@ const NanChuTree = (props) => {
                     </Divider>
                 </Grid>
             </ListItem>
-            <ListItem align="center" disableGutters sx={{ marginTop: '-58px' }}>
+            <ListItem align="center" disableGutters sx={{ marginTop: '-56px' }}>
                 <Grid item xs={1} align="center"></Grid>
                 <Grid item xs={1} align="center">
                     <SquareTwoToneIcon />
@@ -88,7 +88,7 @@ const NanChuTree = (props) => {
                 </Grid>
                 <Grid item xs={1} align="center"></Grid>
             </ListItem>
-            <ListItem align="center" disableGutters sx={{ marginTop: '-40px' }}>
+            <ListItem align="center" disableGutters sx={{ marginTop: '-38px' }}>
                 <Grid item xs={4} align="center"></Grid>
                 <Grid item xs={1} align="center">
                     <SquareTwoToneIcon />
