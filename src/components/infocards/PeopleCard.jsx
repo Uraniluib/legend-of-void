@@ -38,6 +38,9 @@ const PeopleCard = (p) => {
                 p.died && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('死亡：' + p.died.time + '，' + p.died.location)} /></Typography>
             }
             {
+                p.titles && p.titles.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('头衔：' + p.titles.join('、'))} /></Typography>
+            }
+            {
                 p.occupations && p.occupations.length !== 0 && <Typography gutterBottom variant="body2" component="div"><ReactMarkdown children={parseMarkdown('职业：' + p.occupations.join('、'))} /></Typography>
             }
             {

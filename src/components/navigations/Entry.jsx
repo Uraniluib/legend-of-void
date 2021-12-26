@@ -19,7 +19,7 @@ export default function Entry() {
     const params = useParams();
     const { state: article } = useDataFetchAction(ROOT_URL + 'articles/' + params.id + '.md', null);
     const { state: figure } = useDataFetchAction(ROOT_URL + 'images/' + params.id + '.jpg', null);
-    const { state: info } = useDataFetchAction(ROOT_URL + 'cards/' + params.id + '.json', null);
+    const { state: info } = useDataFetchAction(ROOT_URL + 'json/cards/' + params.id + '.json', null);
 
     return (
         <Grid container align='center'
