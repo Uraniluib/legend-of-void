@@ -45,7 +45,7 @@ import EscalatorWarningOutlinedIcon from '@mui/icons-material/EscalatorWarningOu
 const TreeDescription = () => {
 
     const [checked, setChecked] = React.useState(['']);
-    const [expanded, setExpanded] = React.useState('');
+    const [expanded, setExpanded] = React.useState('panel3');
 
     const handleToggle = (value) => () => {
         const currentIndex = checked.indexOf(value);
@@ -326,19 +326,6 @@ const TreeDescription = () => {
                         </Grid>
                     </Grid>
                 </AccordionDetails>
-            </Accordion>
-            <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel4bh-content"
-                    id="panel4bh-header"
-                >
-                    <Typography sx={{ fontWeight: '600', marginRight: '10px' }}>人际关系</Typography>
-                </AccordionSummary>
-                <Divider />
-                {/* <AccordionDetails>
-                    <Typography></Typography>
-                </AccordionDetails> */}
             </Accordion>
         </>
 
