@@ -66,7 +66,9 @@ const FamilyTree = (props) => {
                     </Select>
                 </FormControl>
             </Grid>
-            {genealogyList(family)}
+            <Grid container sx={{ overflowX: 'auto' }}>
+                {genealogyList(family)}
+            </Grid>
         </Grid >
     );
 }

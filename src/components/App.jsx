@@ -53,7 +53,7 @@ function App(props) {
         <footer>
           <Box
             style={{
-              paddingBottom: '1em',
+              paddingBottom: '2em',
             }}
           >
             <Copyright />

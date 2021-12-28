@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 
 const TreeDetails = (props) => {
     return (
-        <Grid item xs={12} sx={{ marginTop: '8px', minWidth: '400px', overflowX: "auto" }}>
+        <Grid item xs={12} sx={{ marginTop: '8px', minWidth: '500px', paddingBottom: '16px' }}>
             {props.name.map((ncD, i) => (
                 <ListItem key={i} align="center" disableGutters sx={{ marginTop: ncD.li.mt+"px" }}>
                     {
