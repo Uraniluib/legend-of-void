@@ -41,6 +41,7 @@ import BalanceIcon from '@mui/icons-material/Balance';
 import BedroomParentOutlinedIcon from '@mui/icons-material/BedroomParentOutlined';
 import BabyChangingStationOutlinedIcon from '@mui/icons-material/BabyChangingStationOutlined';
 import EscalatorWarningOutlinedIcon from '@mui/icons-material/EscalatorWarningOutlined';
+import { mainBody, parents, parentChild } from '../../datasets/treeDescriptionData';
 
 const TreeDescription = () => {
 
@@ -79,6 +80,27 @@ const TreeDescription = () => {
                 <Divider />
                 <AccordionDetails>
                     <List disablePadding dense={true} sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                        {
+                            mainBody.map((mb, i) => (
+                                <ListItem key={mb.key + i} disableGutters>
+                                    <ListItemIcon>
+                                        <mb.icon1 color={mb.color} /><mb.icon2 color={mb.color} />
+                                    </ListItemIcon>
+                                    <ListItemText id={mb.id} primary={mb.p} secondary={mb.s} />
+                                    {/* <Switch
+                                        edge="end"
+                                        size="small"
+                                        color={mb.color}
+                                        onChange={handleToggle(mb.key)}
+                                        checked={checked.indexOf(mb.key) === -1}
+                                        inputProps={{
+                                            'aria-labelledby': mb.id,
+                                        }}
+                                    /> */}
+                                </ListItem>
+                            ))
+                        }
+
                         <ListItem disableGutters>
                             <ListItemIcon><AllOutOutlinedIcon /><AllOutTwoToneIcon /></ListItemIcon>
                             <ListItemText id="actual-common-choose-common" primary="通性" secondary="本性通/择性通" />

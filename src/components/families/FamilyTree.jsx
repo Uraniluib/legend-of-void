@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import TreeDetails from './TreeDetails.jsx';
-import { ethnicities, families, nc } from '../../datasets/families.jsx';
+import { ethnicities, families, nc } from '../../datasets/familyTreeData.jsx';
 
 // 通过不同的family和type返回不同的家族树
 function genealogyList(family) {

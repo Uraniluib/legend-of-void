@@ -1,5 +1,5 @@
-import SquareTwoToneIcon from '@mui/icons-material/SquareTwoTone';
-import CircleTwoToneIcon from '@mui/icons-material/CircleTwoTone';
+import CheckBoxOutlineBlankSharpIcon from '@mui/icons-material/CheckBoxOutlineBlankSharp';
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import BalanceIcon from '@mui/icons-material/Balance';
@@ -14,7 +14,7 @@ export const nc = [
         "grid": [
             {
                 "xs": 1,
-                "icon": CircleTwoToneIcon,
+                "icon": CircleOutlinedIcon,
                 "color": "error",
                 "typo": "瞿琪"
             }, {
@@ -33,7 +33,7 @@ export const nc = [
                 "dIcon": BabyChangingStationOutlinedIcon
             }, { "xs": 4 }, {
                 "xs": 1,
-                "icon": SquareTwoToneIcon,
+                "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
                 "typo": "赧滁"
             }, {
@@ -42,7 +42,7 @@ export const nc = [
                 "typo": "\u00A0"
             }, {
                 "xs": 1,
-                "icon": CircleTwoToneIcon,
+                "icon": CircleOutlinedIcon,
                 "color": "error",
                 "typo": "莨烨"
             }
@@ -52,7 +52,7 @@ export const nc = [
         "grid": [
             { "xs": 3 }, {
                 "xs": 1,
-                "icon": CircleTwoToneIcon,
+                "icon": CircleOutlinedIcon,
                 "color": "error",
                 "typo": "姯夙"
             }, {
@@ -71,7 +71,7 @@ export const nc = [
         "grid": [
             { "xs": 1 }, {
                 "xs": 1,
-                "icon": SquareTwoToneIcon,
+                "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
                 "typo": "叶"
             }, {
@@ -86,7 +86,7 @@ export const nc = [
         "grid": [
             { "xs": 8 }, {
                 "xs": 1,
-                "icon": SquareTwoToneIcon,
+                "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
                 "typo": "蔚"
             }, {
@@ -95,7 +95,7 @@ export const nc = [
                 "typo": "\u00A0"
             }, {
                 "xs": 1,
-                "icon": SquareTwoToneIcon,
+                "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
                 "typo": "岐"
             }, { "xs": 1 }
@@ -105,7 +105,7 @@ export const nc = [
         "grid": [
             { "xs": 4 }, {
                 "xs": 1,
-                "icon": SquareTwoToneIcon,
+                "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
                 "typo": "琴"
             }, { "xs": 7 }
