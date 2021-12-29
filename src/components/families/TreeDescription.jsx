@@ -46,7 +46,7 @@ const TreeDescription = () => {
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
                 >
-                    <Typography sx={{ fontWeight: '600', marginRight: '10px' }}>人物主体</Typography>
+                    <Typography sx={{ fontWeight: '600', mr: '10px' }}>人物主体</Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>普通/死亡</Typography>
                 </AccordionSummary>
                 <Divider />
@@ -104,7 +104,7 @@ const TreeDescription = () => {
                     aria-controls="panel3bh-content"
                     id="panel3bh-header"
                 >
-                    <Typography sx={{ fontWeight: '600', marginRight: '10px' }}>亲子关系</Typography>
+                    <Typography sx={{ fontWeight: '600', mr: '10px' }}>亲子关系</Typography>
                 </AccordionSummary>
                 <Divider />
                 <AccordionDetails>

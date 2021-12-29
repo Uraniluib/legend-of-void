@@ -37,7 +37,7 @@ export default function Chronicle() {
     ];
 
     return (
-        <Paper sx={{ marginTop: '1em' }}>
+        <Paper sx={{ mt: '1em' }}>
             <MaterialTable
                 style={{ color: 'inherit', backgroundColor: 'inherit' }}
                 title="初始编年史"

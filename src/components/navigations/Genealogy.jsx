@@ -8,7 +8,7 @@ const Genealogy = (props) => {
     return (
         <Grid container
             component={Paper}
-            sx={{ margin: '1em 1em 1em 1em', padding: '0 1em 1em 0', width: 'auto' }}
+            sx={{ m: '1em 1em 1em 1em', p: '0 1em 1em 0', width: 'auto' }}
             spacing={2}>
             <Grid item xs={12} sm={5} md={4} lg={3} xl={2}>
                 <TreeDescription />

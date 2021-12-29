@@ -14,53 +14,93 @@ export const nc = [
         "grid": [
             {
                 "xs": 1,
+                "zIndex": 5,
                 "icon": CircleOutlinedIcon,
                 "color": "error",
-                "typo": "瞿琪"
+                "typo": "[[瞿琪]]",
+                "pop": true,
+                "born": "【华转纪764代42回】",
+                "died": "【华转纪871代107回】",
+                "aged": "【107代】"
             }, {
                 "xs": 6,
+                "zIndex": 5,
                 "dIcon": BalanceIcon,
-                "typo": "\u00A0"
-            }, { "xs": 5 }
+                "typo": "&nbsp;",
+                "pop": true,
+                "event": "【华转纪823代0回】",
+            }, {
+                "xs": 5,
+                "zIndex": -1
+            }
         ]
     }, {
         "li": { "mt": -48 },
         "grid": [
             {
                 "xs": 3,
+                "zIndex": 0,
                 "ori": "vertical",
                 "height": 64,
                 "dIcon": BabyChangingStationOutlinedIcon
-            }, { "xs": 4 }, {
+            }, {
+                "xs": 4,
+                "zIndex": -1,
+            }, {
                 "xs": 1,
+                "zIndex": 5,
                 "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
-                "typo": "赧滁"
+                "typo": "[[赧滁]]",
+                "pop": true,
+                "born": "【华转纪763代7回】",
+                "died": "【华转纪991代87回】",
+                "aged": "【228代】"
             }, {
                 "xs": 3,
+                "zIndex": 5,
                 "dIcon": BalanceIcon,
-                "typo": "\u00A0"
+                "typo": "&nbsp;",
+                "pop": true,
+                "event": "【华转纪861代1回】",
             }, {
                 "xs": 1,
+                "zIndex": 5,
                 "icon": CircleOutlinedIcon,
                 "color": "error",
-                "typo": "莨烨"
+                "typo": "[[莨烨]]",
+                "pop": true,
+                "born": "【华转纪778代90回】",
+                "died": "【华转纪920代6回】",
+                "aged": "【142代】"
             }
         ]
     }, {
         "li": { "mt": -48 },
         "grid": [
-            { "xs": 3 }, {
+            {
+                "xs": 3,
+                "zIndex": -1
+            }, {
                 "xs": 1,
+                "zIndex": 5,
                 "icon": CircleOutlinedIcon,
                 "color": "error",
-                "typo": "姯夙"
+                "typo": "[[姯夙]]",
+                "pop": true,
+                "born": "【华转纪780代53回】",
+                "died": "【双子纪165代29回】",
+                "aged": "【377代】"
             }, {
                 "xs": 3,
+                "zIndex": 5,
                 "dIcon": WarningAmberIcon,
-                "typo": "\u00A0"
+                "typo": "&nbsp;",
+                "pop": true,
+                "event": "【华转纪899代99回】",
             }, {
                 "xs": 5,
+                "zIndex": 0,
                 "ori": "vertical",
                 "height": 64,
                 "dIcon": BabyChangingStationOutlinedIcon
@@ -69,13 +109,22 @@ export const nc = [
     }, {
         "li": { "mt": -56 },
         "grid": [
-            { "xs": 1 }, {
+            {
                 "xs": 1,
+                "zIndex": -1
+            }, {
+                "xs": 1,
+                "zIndex": 5,
                 "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
-                "typo": "叶"
+                "typo": "[[叶]]",
+                "pop": true,
+                "born": "【华转纪827代44回】",
+                "died": "【华转纪853代25回】",
+                "aged": "【26代】"
             }, {
                 "xs": 5,
+                "zIndex": 0,
                 "ori": "vertical",
                 "height": 64,
                 "dIcon": BabyChangingStationOutlinedIcon
@@ -84,30 +133,52 @@ export const nc = [
     }, {
         "li": { "mt": -40 },
         "grid": [
-            { "xs": 8 }, {
-                "xs": 1,
-                "icon": CheckBoxOutlineBlankSharpIcon,
-                "color": "info",
-                "typo": "蔚"
+            {
+                "xs": 8,
+                "zIndex": -1
             }, {
                 "xs": 1,
+                "zIndex": 5,
+                "icon": CheckBoxOutlineBlankSharpIcon,
+                "color": "info",
+                "typo": "[[蔚]]",
+                "pop": true,
+                "born": "【华转纪871代36回】",
+                "died": "【华转纪989代52回】",
+                "aged": "【118代】"
+            }, {
+                "xs": 1,
+                "zIndex": 0,
                 "dIcon": PeopleOutlineIcon,
-                "typo": "\u00A0"
+                "typo": "&nbsp;"
             }, {
                 "xs": 1,
+                "zIndex": 5,
                 "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
-                "typo": "岐"
+                "typo": "[[岐]]",
+                "pop": true,
+                "born": "【华转纪871代36回】",
+                "died": "【双子纪15代85回】",
+                "aged": "【136代】"
             }, { "xs": 1 }
         ]
     }, {
         "li": { "mt": -38 },
         "grid": [
-            { "xs": 4 }, {
+            {
+                "xs": 4,
+                "zIndex": -1
+            }, {
                 "xs": 1,
+                "zIndex": 5,
                 "icon": CheckBoxOutlineBlankSharpIcon,
                 "color": "info",
-                "typo": "琴"
+                "typo": "[[琴]]",
+                "pop": true,
+                "born": "【华转纪903代27回】",
+                "died": "【原子纪纪3代93回】",
+                "aged": "【262代】"
             }, { "xs": 7 }
         ]
     }

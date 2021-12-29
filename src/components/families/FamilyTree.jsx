@@ -14,7 +14,7 @@ function genealogyList(family) {
         case 'nan-chu':
             return <TreeDetails name={nc} />
         default:
-            return <Typography sx={{ margin: '8px 0 0 8px' }}>请选择已有的家族树进行查看。</Typography>
+            return <Typography sx={{ m: '8px 0 0 8px' }}>请选择已有的家族树进行查看。</Typography>
     }
 }
 

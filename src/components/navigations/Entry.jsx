@@ -36,7 +36,7 @@ export default function Entry() {
     return (
         <Grid container align='center'
             component={Paper}
-            sx={{ margin: '1em 1em 1em 1em', padding: '0 1em 1em 0', width: 'auto' }}
+            sx={{ m: '1em 1em 1em 1em', p: '0 1em 1em 0', width: 'auto' }}
             spacing={2}>
             <Grid item xs={12} sm={6} md={5} lg={4} xl={3}>
                 <Card align='left' sx={{ maxWidth: '400px' }}>
@@ -78,7 +78,7 @@ export default function Entry() {
                                     </Link>
                                 )
                             }
-                            <Divider sx={{ marginTop: '1em' }} />
+                            <Divider sx={{ mt: '1em' }} />
                         </>
                     }
                 </Grid>
