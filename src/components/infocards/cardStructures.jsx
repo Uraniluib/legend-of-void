@@ -53,7 +53,7 @@ export function color(n, d) {
 // 适用于带颜色array
 export function colorList(n, d) {
     return (
-        n && n.length !== 0 && n[0].name && nParams[0].code &&  <Typography gutterBottom variant="body2" component="div">{d}
+        n && n.length !== 0 && n[0].name && n[0].code &&  <Typography gutterBottom variant="body2" component="div">{d}
             {
                 n.map((e, i) =>
                     <span key={e.code + i}>
