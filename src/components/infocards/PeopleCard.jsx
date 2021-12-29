@@ -36,8 +36,8 @@ const PeopleCard = (p) => {
             {bodyList(p.events, "事件：")}
             {bodyList(p.notableWorks, "著作：")}
             <Divider sx={{ marginBottom: MARGIN_BOTTOM }} />
-            {bodyList(p.parents, "亲生父母：")}
-            {bodyList(p.adoptiveParents, "养父母：")}
+            {bodyList(p.parents, "本生：")}
+            {bodyList(p.adoptiveParents, "收养：")}
             {bodyList(p.siblings, "手足：")}
             {bodyList(p.spouses, "配偶：")}
             {bodyList(p.children, "孩子：")}

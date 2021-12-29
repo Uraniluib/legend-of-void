@@ -32,16 +32,15 @@ export function nParams(n, ...args) {
 // 适用于带颜色有常态和伪装的值
 export function color(n, d) {
     return (
-        n && <Typography gutterBottom variant="body2" component="div">瞳色：
+        n && n.normal && n.normal.name && n.normal.code && <Typography gutterBottom variant="body2" component="div">{d}
             {
-                n.normal &&
                 <span>
                     常态 <Chip label={n.normal.name}
                         style={{ backgroundColor: n.normal.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(n.normal.code)} />
                 </span>
             }
             {
-                n.disguise &&
+                n.disguise && n.disguise.name && n.disguise.code &&
                 <span>
                     | 伪装 <Chip label={n.disguise.name}
                         style={{ backgroundColor: n.disguise.code, height: '1.5em' }} onClick={() => navigator.clipboard.writeText(n.disguise.code)} />
@@ -54,7 +53,7 @@ export function color(n, d) {
 // 适用于带颜色array
 export function colorList(n, d) {
     return (
-        n && <Typography gutterBottom variant="body2" component="div">着色：
+        n && n.length !== 0 && n[0].name && nParams[0].code &&  <Typography gutterBottom variant="body2" component="div">{d}
             {
                 n.map((e, i) =>
                     <span key={e.code + i}>
