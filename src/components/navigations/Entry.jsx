@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -9,11 +9,23 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
-import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { parseMarkdown, chooseCardModel } from '../../helpers/utils.jsx';
+import PeopleCard from '../infocards/PeopleCard.jsx';
 import useDataFetchAction from '../../stores/actions/dataFetchAction.jsx';
+import { parseMarkdown } from '../../helpers/utils.jsx';
 import { ROOT_URL } from '../../helpers/constants.jsx';
+
+
+// 通过不同的data.card参数返回不同类型的卡片
+function chooseCardModel(data) {
+    switch (data.card) {
+        case 'people':
+            return <PeopleCard {...data} />
+        default:
+            return <Typography gutterBottom variant="body" component="div">非法参数，请修改data.card值或创建新的卡片模板。</Typography>
+    }
+}
+
 
 export default function Entry() {
     const params = useParams();
@@ -57,13 +69,18 @@ export default function Entry() {
                 <Grid item xs={12}>
                     {
                         // 分类标签，来自cards.json
-                        !info.isLoading && !info.isError && info.data && info.data.categories && info.data.categories.length !== 0 && info.data.categories.map((e, i) =>
-                            <Link key={e + i} to={"/categories/" + e}>
-                                <Chip label={e} clickable={true} />{" "}
-                            </Link>
-                        )
+                        !info.isLoading && !info.isError && info.data && info.data.categories && info.data.categories.length !== 0 &&
+                        <>
+                            {
+                                info.data.categories.map((e, i) =>
+                                    <Link key={e + i} to={"/categories/" + e}>
+                                        <Chip label={e} clickable={true} />{" "}
+                                    </Link>
+                                )
+                            }
+                            <Divider sx={{ marginTop: '1em' }} />
+                        </>
                     }
-                    <Divider sx={{ marginTop: '1em' }} />
                 </Grid>
                 <Grid item xs={12}>
                     {/* md格式的正文部分，来自articles.md */}
