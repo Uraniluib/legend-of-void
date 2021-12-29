@@ -84,8 +84,8 @@ export default function Entry() {
                 </Grid>
                 <Grid item xs={12}>
                     {/* md格式的正文部分，来自articles.md */}
-                    {article.isLoading && <Typography variant="h6" component="div">正在加载……</Typography>}
-                    {article.isError && <Typography variant="h6" component="div">暂无内容，请努力耕耘。</Typography>}
+                    {article.isLoading && <Typography variant="body" component="p">正在加载……</Typography>}
+                    {article.isError && <Typography variant="body" component="p">暂无内容，请努力耕耘。</Typography>}
                     {!article.isLoading && !article.isError && <ReactMarkdown children={parseMarkdown(article.data)} />}
                 </Grid>
             </Grid>
