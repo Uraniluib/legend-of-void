@@ -1,4 +1,0 @@
-{
-    "key": "hows-going-today",
-    "value": "I'm doing well"
-}
