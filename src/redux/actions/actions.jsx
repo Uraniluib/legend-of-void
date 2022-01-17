@@ -7,24 +7,24 @@ const getUsers = (users) => ({
     payload: users,
 });
 
-const deleteUsers = () => ({
+const userDelete = () => ({
     type: types.DELETE_USERS,
 });
 
 export const loadUsers = () => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_API}`).then((res) => {
-            console.log("res", res);
+            console.log("response: ", res);
             dispatch(getUsers(res.data));
-        }).catch(err => console.log("res", res))
+        }).catch(err => console.log("error: ", err))
     }
 }
 
 export const deleteUsers = (id) => {
     return function (dispatch) {
         axios.get(`${process.env.REACT_APP_API}/${id}`).then((res) => {
-            console.log("res", res);
-            dispatch(deleteUsers());
-        }).catch(err => console.log("res", res))
+            console.log("response: ", res);
+            dispatch(userDelete());
+        }).catch(err => console.log("error: ", err))
     }
 }

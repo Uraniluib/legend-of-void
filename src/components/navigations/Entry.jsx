@@ -22,8 +22,6 @@ import useDataFetchAction from '../../redux/actions/dataFetchAction.jsx';
 import dataUpdateAction from '../../redux/actions/dataUpdateAction.jsx';
 import { parseMarkdown, decodeBase64, encodeBase64, headers } from '../../helpers/utils.jsx';
 import { ROOT_URL, GIT_API } from '../../helpers/constants.jsx';
-import {useDispatch, useSelector} from "react-redux";
-import { deleteUsers, loadUsers } from '../../redux/actions/actions.jsx';
 
 
 // 通过不同的data.card参数返回不同类型的卡片
@@ -44,13 +42,6 @@ const Entry = () =>  {
     const [editMode, setEditMode] = useState(false);
     const [text, setText] = useState();
 
-    const { users } = useSelector(state => state.users)
-    let dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadUsers());
-
-    },[]);
-
     const handleEditClick = () => {
         setEditMode(true);
         setText(article.data.content ? decodeBase64(article.data.content) : '');
@@ -66,25 +57,12 @@ const Entry = () =>  {
     const handleTextChange = (event) => {
         setText(event.target.value);
     }
-    const handleDelete = (id) => {
-        if(window.confirm("Are you sure?")) {
-            dispatch(deleteUsers);
-        }
-    }
 
     return (
         <Grid container align='center'
             component={Paper}
             sx={{ m: '1em 1em 1em 1em', p: '0 1em 1em 0', width: 'auto' }}
             spacing={2}>
-                <Button
-                onClick={() => handleDelete(users.id)}
-                >
-                    Delete
-                </Button>
-                <Button>
-                    Edit
-                </Button>
             <Grid item xs={12} sm={6} md={5} lg={4} xl={3}>
                 <Card align='left' sx={{ maxWidth: '400px' }}>
                     {/* 图片栏，来自images.jpg */}

@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Paper from '@mui/material/Paper';
 import MaterialTable from 'material-table';
 import ReactMarkdown from 'react-markdown';
@@ -6,13 +7,31 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useTheme } from '@mui/material/styles';
-import { chronicleData } from '../../datasets/chronicleData.jsx';
+// import { chronicleData } from '../../datasets/chronicleData.jsx';
 import { parseMarkdown } from '../../helpers/utils.jsx';
 import { ageData } from '../../helpers/constants.jsx';
+import { loadChronicles } from '../../redux/actions/chronicleActions.jsx';
+import chronicleReducer from '../../redux/reducers/chronicleReducer.jsx';
+// import { deleteUsers, loadUsers } from '../../redux/actions/actions.jsx';
 
 
-export default function Chronicle() {
+const Chronicle = () => {
     const theme = useTheme();
+    const { chronicles } = useSelector(state => state.chronicles);
+
+    let dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadChronicles());
+
+    }, []);
+
+    
+    // const handleDelete = (id) => {
+    //     if(window.confirm("Are you sure?")) {
+    //         dispatch(deleteUsers);
+    //     }
+    // }
+
     const columns = [
         {
             field: 'age',
@@ -39,12 +58,20 @@ export default function Chronicle() {
     ];
 
     return (
-        <Paper sx={{ mt: '1em' }}>
+        chronicles && <Paper sx={{ mt: '1em' }}>
+            {/* <Button
+                onClick={() => handleDelete(users.id)}
+                >
+                    Delete
+                </Button>
+                <Button>
+                    Edit
+                </Button> */}
             <MaterialTable
                 style={{ color: 'inherit', backgroundColor: 'inherit' }}
                 title="初始编年史"
                 columns={columns}
-                data={chronicleData}
+                data={chronicles}
                 icons={{
                     Filter: React.forwardRef((props, ref) => <FilterListIcon {...props} ref={ref} style={{ color: theme.palette.primary.contrastText }} />),
                     Search: React.forwardRef((props, ref) => <ManageSearchIcon {...props} ref={ref} style={{ color: theme.palette.primary.contrastText }} />),
@@ -70,3 +97,4 @@ export default function Chronicle() {
         </Paper >
     );
 }
+export default Chronicle; 

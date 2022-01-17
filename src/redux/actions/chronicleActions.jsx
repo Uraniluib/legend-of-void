@@ -1,8 +1,9 @@
 import * as types from "./../actionType.jsx";
 import axios from "axios";
+import { ROOT_URL } from "../../helpers/constants.jsx";
 
 
-const getUsers = (chronicles) => ({
+const getChronicles = (chronicles) => ({
     type: types.GET_DATA,
     payload: chronicles,
 });
@@ -13,16 +14,17 @@ const getUsers = (chronicles) => ({
 
 export const loadChronicles = () => {
     return function (dispatch) {
-        axios.get(`${process.env.REACT_APP_API}`).then((res) => {
-            console.log("res", res);
-            dispatch(getUsers(res.data));
-        }).catch(err => console.log("res", res))
+        axios.get(`${ROOT_URL}/json/chronicle.json`).then((res) => {
+            console.log("response: ", res.data);
+            dispatch(getChronicles(res.data));
+        }).catch(err => console.log("error: ", err))
     }
 }
 
+
 // export const deleteUsers = (id) => {
 //     return function (dispatch) {
-//         axios.get(`${process.env.REACT_APP_API}/${id}`).then((res) => {
+//         axios.get(ROOT_URL).then((res) => {
 //             console.log("res", res);
 //             dispatch(deleteUsers());
 //         }).catch(err => console.log("res", res))
