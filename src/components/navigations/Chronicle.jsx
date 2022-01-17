@@ -6,8 +6,10 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useTheme } from '@mui/material/styles';
-import { chronicleData, ageData } from '../../datasets/chronicleData.jsx';
+import { chronicleData } from '../../datasets/chronicleData.jsx';
 import { parseMarkdown } from '../../helpers/utils.jsx';
+import { ageData } from '../../helpers/constants.jsx';
+
 
 export default function Chronicle() {
     const theme = useTheme();
