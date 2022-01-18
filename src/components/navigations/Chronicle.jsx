@@ -17,7 +17,8 @@ import chronicleReducer from '../../redux/reducers/chronicleReducer.jsx';
 
 const Chronicle = () => {
     const theme = useTheme();
-    const { chronicles } = useSelector(state => state.chronicles);
+    let { chronicles } = useSelector(state => state.chronicles);
+
 
     let dispatch = useDispatch();
     useEffect(() => {
@@ -63,7 +64,8 @@ const Chronicle = () => {
     ];
 
     return (
-        chronicles && <Paper sx={{ mt: '1em' }}>
+        chronicles && 
+        chronicles.sort(function(a, b){return a.id-b.id}) && <Paper sx={{ mt: '1em' }}>
             {/* <Button
                 onClick={() => handleDelete(users.id)}
                 >
@@ -88,6 +90,10 @@ const Chronicle = () => {
                     padding: 'dense',
                     sorting: false,
                     actionsColumnIndex: 4,
+                    selection: true,
+                    addRowPosition: 'first',
+                    showTextRowsSelected: false,
+                    showSelectAllCheckbox: false,
                     headerStyle: { color: 'inherit', backgroundColor: 'inherit', fontWeight: 'bold' },
                     rowStyle: { fontSize: '0.875rem' },
                     searchFieldStyle: { color: 'inherit', backgroundColor: 'inherit' },
@@ -105,11 +111,19 @@ const Chronicle = () => {
                         addTooltip: "添加",
                         editTooltip: "编辑",
                         deleteTooltip: "删除",
+                        searchTooltip: "查找",
                         editRow: {
                             deleteText: "确定要删除这行吗？"
                         }
                     }
                 }}
+                actions={[
+                    {
+                        tooltip: '删除所有选中的行',
+                        icon: 'delete',
+                        onClick: (evt, data) => alert('确定要移除这' + data.length + '行吗？')
+                    }
+                ]}
                 editable={{
                     onRowAdd: newData =>
                         new Promise((resolve, reject) => {
@@ -130,17 +144,17 @@ const Chronicle = () => {
                                 resolve();
                             }, 1000)
                         }),
-                    onRowDelete: oldData =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                const dataDelete = [...data];
-                                const index = oldData.tableData.id;
-                                dataDelete.splice(index, 1);
-                                setData([...dataDelete]);
+                    // onRowDelete: oldData =>
+                    //     new Promise((resolve, reject) => {
+                    //         setTimeout(() => {
+                    //             const dataDelete = [...data];
+                    //             const index = oldData.tableData.id;
+                    //             dataDelete.splice(index, 1);
+                    //             setData([...dataDelete]);
 
-                                resolve();
-                            }, 1000)
-                        }),
+                    //             resolve();
+                    //         }, 1000)
+                    //     }),
                 }}
             />
         </Paper >
