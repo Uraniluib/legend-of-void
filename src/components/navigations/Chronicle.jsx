@@ -87,6 +87,7 @@ const Chronicle = () => {
                     paging: false,
                     padding: 'dense',
                     sorting: false,
+                    actionsColumnIndex: 4,
                     headerStyle: { color: 'inherit', backgroundColor: 'inherit', fontWeight: 'bold' },
                     rowStyle: { fontSize: '0.875rem' },
                     searchFieldStyle: { color: 'inherit', backgroundColor: 'inherit' },
