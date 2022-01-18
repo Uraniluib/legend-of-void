@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Paper from '@mui/material/Paper';
 import MaterialTable from 'material-table';
@@ -25,12 +25,17 @@ const Chronicle = () => {
 
     }, []);
 
-    
+
     // const handleDelete = (id) => {
     //     if(window.confirm("Are you sure?")) {
     //         dispatch(deleteUsers);
     //     }
     // }
+
+    const [data, setData] = useState([
+        { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+        { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
+    ]);
 
     const columns = [
         {
@@ -41,12 +46,12 @@ const Chronicle = () => {
             render: (rowData) => <ReactMarkdown children={"[" + rowData.age + "](/legend-of-void#/entry/" + rowData.age + ")"}></ReactMarkdown>
         },
         {
-            field: 'time', title: '代', type: 'numeric',
+            field: 'time', title: '代',
             customFilterAndSearch: (term, rowData) => parseInt(term) <= parseInt(rowData.time),
             cellStyle: { width: '8%', minWidth: '90px' }
         },
         {
-            field: 'date', title: '回', type: 'numeric',
+            field: 'date', title: '回',
             customFilterAndSearch: (term, rowData) => parseInt(term) <= parseInt(rowData.date),
             cellStyle: { width: '8%', minWidth: '90px' }
         },
@@ -84,14 +89,57 @@ const Chronicle = () => {
                     sorting: false,
                     headerStyle: { color: 'inherit', backgroundColor: 'inherit', fontWeight: 'bold' },
                     rowStyle: { fontSize: '0.875rem' },
-                    filterCellStyle: { backgroundColor: theme.palette.primary.light },
                     searchFieldStyle: { color: 'inherit', backgroundColor: 'inherit' },
-                    tableLayout: 'auto'
+                    tableLayout: 'auto',
+                    actionsCellStyle: { color: 'inherit', backgroundColor: 'inherit' }
                 }}
                 localization={{
                     toolbar: {
-                        searchPlaceholder: '请输入……'
+                        searchPlaceholder: "请输入……"
+                    },
+                    header: {
+                        actions: "删改"
+                    },
+                    body: {
+                        addTooltip: "添加",
+                        editTooltip: "编辑",
+                        deleteTooltip: "删除",
+                        editRow: {
+                            deleteText: "确定要删除这行吗？"
+                        }
                     }
+                }}
+                editable={{
+                    onRowAdd: newData =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                setData([...data, newData]);
+
+                                resolve();
+                            }, 1000)
+                        }),
+                    onRowUpdate: (newData, oldData) =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                const dataUpdate = [...data];
+                                const index = oldData.tableData.id;
+                                dataUpdate[index] = newData;
+                                setData([...dataUpdate]);
+
+                                resolve();
+                            }, 1000)
+                        }),
+                    onRowDelete: oldData =>
+                        new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                const dataDelete = [...data];
+                                const index = oldData.tableData.id;
+                                dataDelete.splice(index, 1);
+                                setData([...dataDelete]);
+
+                                resolve();
+                            }, 1000)
+                        }),
                 }}
             />
         </Paper >
