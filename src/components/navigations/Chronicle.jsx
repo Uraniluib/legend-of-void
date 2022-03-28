@@ -40,6 +40,11 @@ const Chronicle = () => {
 
     const columns = [
         {
+            field: 'id',
+            title: 'ID',
+            cellStyle: { width: '7%', minWidth: '90px' }
+        },
+        {
             field: 'age',
             title: '纪元',
             lookup: ageData,
@@ -58,7 +63,7 @@ const Chronicle = () => {
         },
         {
             field: 'event', title: '大事件',
-            cellStyle: { width: '77%' },
+            cellStyle: { width: '70%' },
             render: (rowData) => <ReactMarkdown children={parseMarkdown(rowData.event)}></ReactMarkdown>
         }
     ];
@@ -89,7 +94,7 @@ const Chronicle = () => {
                     paging: false,
                     padding: 'dense',
                     sorting: false,
-                    actionsColumnIndex: 4,
+                    actionsColumnIndex: 5,
                     selection: true,
                     addRowPosition: 'first',
                     showTextRowsSelected: false,
