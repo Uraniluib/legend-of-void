@@ -8,7 +8,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useTheme } from '@mui/material/styles';
 // import { chronicleData } from '../../datasets/chronicleData.jsx';
-import { parseMarkdown } from '../../helpers/utils.jsx';
+import { headers, parseMarkdown } from '../../helpers/utils.jsx';
 import { ageData } from '../../helpers/constants.jsx';
 import { loadChronicles } from '../../redux/actions/chronicleActions.jsx';
 import chronicleReducer from '../../redux/reducers/chronicleReducer.jsx';
@@ -33,10 +33,10 @@ const Chronicle = () => {
     //     }
     // }
 
-    const [data, setData] = useState([
-        { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
-        { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
-    ]);
+    // const [data, setData] = useState([
+    //     { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
+    //     { name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34 },
+    // ]);
 
     const columns = [
         {
@@ -130,25 +130,26 @@ const Chronicle = () => {
                     }
                 ]}
                 editable={{
-                    onRowAdd: newData =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                setData([...data, newData]);
+                    // onRowAdd: newData =>
+                    //     new Promise((resolve, reject) => {
+                    //         setTimeout(() => {
+                    //             console.log(newData);
+                    //             // dispatch(updateChronicles(chronicles, newData, headers));
+                    //             setData([...chronicles, newData]);
+                    //             resolve();
+                    //         }, 1000)
+                    //     }),
+                    // onRowUpdate: (newData, oldData) =>
+                    //     new Promise((resolve, reject) => {
+                    //         setTimeout(() => {
+                    //             const dataUpdate = [...chronicles];
+                    //             const index = oldData.tableData.id;
+                    //             dataUpdate[index] = newData;
+                    //             // setData([...dataUpdate]);
 
-                                resolve();
-                            }, 1000)
-                        }),
-                    onRowUpdate: (newData, oldData) =>
-                        new Promise((resolve, reject) => {
-                            setTimeout(() => {
-                                const dataUpdate = [...data];
-                                const index = oldData.tableData.id;
-                                dataUpdate[index] = newData;
-                                setData([...dataUpdate]);
-
-                                resolve();
-                            }, 1000)
-                        }),
+                    //             resolve();
+                    //         }, 1000)
+                    //     }),
                     // onRowDelete: oldData =>
                     //     new Promise((resolve, reject) => {
                     //         setTimeout(() => {

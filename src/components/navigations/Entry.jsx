@@ -36,7 +36,7 @@ function chooseCardModel(data) {
 
 const Entry = () =>  {
     const params = useParams();
-    const { state: article } = useDataFetchAction(GIT_API + 'articles/' + params.id + '.md', null);
+    const { state: article } = useDataFetchAction(GIT_API + 'markdown/' + params.id + '.md', null);
     const { state: figure } = useDataFetchAction(ROOT_URL + 'images/' + params.id + '.jpg', null);
     const { state: info } = useDataFetchAction(ROOT_URL + 'json/cards/' + params.id + '.json', null);
     const [editMode, setEditMode] = useState(false);
@@ -48,7 +48,7 @@ const Entry = () =>  {
     };
     const handleSaveClick = () => {
         const updateData = { message: "我在测试", content: encodeBase64(text), sha: article.data.sha };
-        dataUpdateAction(GIT_API + 'articles/' + params.id + '.md', updateData, headers);
+        dataUpdateAction(GIT_API + 'markdown/' + params.id + '.md', updateData, headers);
         setEditMode(false);
     };
     const handleCloseClick = () => {

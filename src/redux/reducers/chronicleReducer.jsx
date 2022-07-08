@@ -7,8 +7,14 @@ const initialState = {
 }
 
 const chronicleReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case types.GET_DATA:
+            return {
+                ...state,
+                chronicles: action.payload,
+                loading: false
+            }
+        case types.ADD_DATA:
             return {
                 ...state,
                 chronicles: action.payload,
