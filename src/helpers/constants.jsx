@@ -1,4 +1,4 @@
-export const ROOT_URL = 'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src';
+export const ROOT_URL = 'https://raw.githubusercontent.com/Uraniluib/legend-of-void/main/src/';
 
 export const GIT_API = 'https://api.github.com/repos/Uraniluib/legend-of-void/contents/src/';
 
