@@ -19,6 +19,7 @@ import Story from './components/navigations/Story.jsx';
 import Entry from './components/navigations/Entry.jsx';
 import Categories from './components/navigations/Categories.jsx';
 import store from './redux/store.jsx';
+import Sequence from './components/navigations/Sequence';
 
 /* Use Middleware */
 // const createStoreWithMiddle = applyMiddleware(ReduxPromise)(createStore);
@@ -44,6 +45,8 @@ ReactDOM.render(
           <Route path="/astrogeophy" element={<Astrogeophy />} />
           {/* 小说正文 */}
           <Route path="/story" element={<Story />} />
+          {/* 组金游戏 */}
+          <Route path="/sequence" element={<Sequence />} />
           {/* 分类 */}
           <Route path="/categories/:id" element={<Categories />} />
           {/* 词条 */}
